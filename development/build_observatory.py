@@ -6,12 +6,15 @@ TEMPLATE=(ROOT/'development/observatory_template.html').read_text(encoding='utf-
 CSS=(ROOT/'development/observatory.css').read_text(encoding='utf-8')
 JS=(ROOT/'development/observatory.js').read_text(encoding='utf-8')
 DATA=json.loads((ROOT/'AZURAVEL_DATA.json').read_text(encoding='utf-8'))
+STARSILK=json.loads((ROOT/'sources/starsilk_testimony.json').read_text(encoding='utf-8'))
+assert STARSILK['protocol']=='AZURAVEL-STARSILK-INTERPRETIVE-1' and len(STARSILK['cases'])==4
 assert len(DATA['entries'])==100 and all(len(e['forms'])==6 for e in DATA['entries'])
 raw=json.dumps(DATA,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
-for field,value in [('__OBSERVATORY_CSS__',CSS),('__AZURAVEL_JSON__',raw),('__OBSERVATORY_JS__',JS)]:
+starsilk_raw=json.dumps(STARSILK,ensure_ascii=True,separators=(',',':')).replace('</','<\\/')
+for field,value in [('__OBSERVATORY_CSS__',CSS),('__AZURAVEL_JSON__',raw),('__OBSERVATORY_JS__',JS),('__STARSILK_TESTIMONY__',starsilk_raw)]:
     assert TEMPLATE.count(field)==1,field
     TEMPLATE=TEMPLATE.replace(field,value)
-assert not any(x in TEMPLATE for x in ['__OBSERVATORY_CSS__','__OBSERVATORY_JS__','__AZURAVEL_JSON__'])
+assert not any(x in TEMPLATE for x in ['__OBSERVATORY_CSS__','__OBSERVATORY_JS__','__AZURAVEL_JSON__','__STARSILK_TESTIMONY__'])
 DEST=ROOT/'index.html'
 DEST.write_text(TEMPLATE,encoding='utf-8')
 print('Built',DEST,'bytes',DEST.stat().st_size,'sha256',hashlib.sha256(DEST.read_bytes()).hexdigest())

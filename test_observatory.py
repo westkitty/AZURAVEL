@@ -107,6 +107,8 @@ class ObservatoryTest(unittest.TestCase):
   with tempfile.TemporaryDirectory() as td:
    temp=Path(td)
    (temp/'development').mkdir()
+   (temp/'sources').mkdir()
+   shutil.copyfile(ROOT/'sources/starsilk_testimony.json',temp/'sources/starsilk_testimony.json')
    for x in ['observatory_template.html','observatory.js','observatory.css','build_observatory.py']:
     shutil.copyfile(ROOT/'development'/x,temp/'development'/x)
    shutil.copyfile(ROOT/'AZURAVEL_DATA.json',temp/'AZURAVEL_DATA.json')

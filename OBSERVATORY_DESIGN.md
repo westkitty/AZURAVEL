@@ -40,3 +40,28 @@ No invented AZ2, new planets, monsters, disaster timeline, external database, sy
 - Combined pre-existing and observatory tests pass; offline deterministic build reproduces `index.html`.
 - The `coverage_probe.py` checks seven phases at 320, 360, 390, 768, 1024 and 1440 px, with observed chrome-occupancy below 0.4 and no horizontal overflow.
 - Independent public-URL smoke, screen readers, touch hardware, long-session performance, subjective awe and target-device video playback remain separate unverified obligations.
+
+
+## Source-bound Starsilk testimony - The Cost of Necessity
+
+The project supplied an authored scene after the original observatory release.
+This permits a distinct, evidence-anchored **Starsilk testimony** route without
+retconning the independent AZ1 language or upgrading earlier AZURAVEL fiction
+into canon. The original five speculative case files retain their status.
+The authored scene supplies four grounded interpretations: Blood Rings,
+Siege Wall, Nacreous VI, and Codec's refusal to equate necessity with goodness.
+Each has a claim reading and a cost reading. Every case links to an existing
+AZ1 semantic root as an explicitly labeled analogy; never render dialogue as
+a literal AZ1 translation. The source is identified by name and hash.
+
+The shift in visual scale is from orbital ring to star containment lattice
+to scarred remnant world to a cup with a thin red reflection. These are
+abstract interpretive sketches, not canonical coordinates or cartography.
+The event-state/counter-event distinction remains the AZ1 centerpiece; the
+Starsilk passage illustrates the ethical danger of treating an efficient
+intervention as a complete moral description. No new Starsilk war, date,
+weapon or relationship was invented.
+
+The broader Starsilk Museum runs as a separate repository with its own
+deterministic publication and machine-authority laws. We do not edit it,
+assume a shared entity-ID space, or turn its observed mentions into causality.

@@ -1,0 +1,104 @@
+{
+  "protocol": "AZURAVEL-STARSILK-INTERPRETIVE-1",
+  "title": "The Cost of Necessity",
+  "status": "AUTHORED-STARSILK-NARRATIVE / NOT AZ1 LANGUAGE CANON",
+  "source_filename": "Codec's Radicalization Journey.txt",
+  "source_sha256": "1fe52a96d7fc81e9004a7876e147fb2514a095b6a013210a0bd8c94da770db40",
+  "source_note": "Author-provided project text described as final canon-clean. Excerpts are sourced dramatic testimony; no museum machine invariant or observed mention edge is promoted into historical proof.",
+  "source_boundaries": [
+    "AZURAVEL remains an independent constructed language. No canonical in-universe historical connection to Starsilk or official translation is asserted.",
+    "The cited Starsilk testimony is a user-authored narrative. Its content is not a machine-verified witness recording, location map, or coordinate set.",
+    "Starsilk_Character_Dossier project museum machine edges carry observed mentions only, not causal, personal, temporal, or affiliation claims.",
+    "Artwork is an interpretive diagram; no geolocation, adjacency, scale, or casualty count is inferred from the displayed marks."
+  ],
+  "cases": [
+    {
+      "id": "blood-rings",
+      "seal": "01 / BLOOD RINGS",
+      "short": "THE RING",
+      "title": "The memorial image",
+      "glyph": "ring",
+      "root_id": "I06",
+      "root_reason": "Memory is an AZ1 semantic analogy, not a Starsilk translation.",
+      "primary_evidence": "They were not symbols.",
+      "claim": {
+        "label": "OFFICIAL READING",
+        "lead": "A red circle around a dead world. The memorial images made it possible to point, classify, and move on.",
+        "detail": "Codec mapped the Blood Rings for approach vectors, blind corridors, and limits beyond which instruments lied. The maps made the ring operationally legible."
+      },
+      "cost": {
+        "label": "WITNESS READING",
+        "lead": "The ring was made of the civilization that had lived below it.",
+        "detail": "In Codec's testimony, the orbital material came from homogenized cities and inhabitants: hatcheries, schools, hospitals, markets, and lovers. The Drakken's Blood Rings were not metaphorical halos. Their source was people."
+      },
+      "question": "What did the legend make impossible to see?",
+      "source_scope": "Authorial testimony on Drakken Blood Rings; not a newly discovered artifact or an exact cartographic record."
+    },
+    {
+      "id": "siege-wall",
+      "seal": "02 / SIEGE WALL",
+      "short": "THE WALL",
+      "title": "Containment efficiency",
+      "glyph": "wall",
+      "root_id": "N08",
+      "root_reason": "Star is an AZ1 lexical analogy; it does not encode a Starsilk Macro.",
+      "primary_evidence": "I watched stars become locks.",
+      "claim": {
+        "label": "COMMAND READING",
+        "lead": "Tiger stopped the Drakken advance. The Siege Wall held.",
+        "detail": "At the Aureal Gate, Drakken weaponization of Starsilk prompted Tiger's cold containment response. His heliocide collapsed successive stars and formed a black-hole lattice that contained Mother and her forces."
+      },
+      "cost": {
+        "label": "WITNESS READING",
+        "lead": "Those locks had been inhabited suns.",
+        "detail": "Codec describes thousands of stars collapsing while civilian evacuation windows closed and distress pings became non-actionable. The containment succeeded and imposed catastrophic loss. Tactical success is not moral absolution."
+      },
+      "question": "If a defensive structure is made of star systems, which part of it counts as a casualty?",
+      "source_scope": "Authorial testimony plus Starsilk active-canon locks; abstract structure, not a measured topology."
+    },
+    {
+      "id": "nacreous-six",
+      "seal": "03 / NACREOUS VI",
+      "short": "THE WOUND",
+      "title": "Acceptable deformation",
+      "glyph": "wound",
+      "root_id": "L04",
+      "root_reason": "Effect is an AZ1 semantic analogy, not an official translation of a military term.",
+      "primary_evidence": "It did not miss.",
+      "claim": {
+        "label": "AFTER-ACTION READING",
+        "lead": "A Pyric titan was stopped before it could sever an agricultural and refugee supply chain.",
+        "detail": "Codec selected and verified the Corpse-Burn Firewall Macro against the titan rooted in the geothermal nexus of Nacreous VI. The sector survived the immediate threat."
+      },
+      "cost": {
+        "label": "PLANETARY READING",
+        "lead": "The strike left Nacreous VI a Level 3 remnant world.",
+        "detail": "Permanent storm shear, fixed mountain trauma, and damaged soil chemistry remained. The report's phrase acceptable planetary deformation names a result, not a restoration."
+      },
+      "question": "When survival is verified, who certifies the cost?",
+      "source_scope": "Authorial testimony; named operation and damage are source-grounded. Illustration is schematic."
+    },
+    {
+      "id": "necessary",
+      "seal": "04 / THE CUP",
+      "short": "THE CUP",
+      "title": "The oldest mask",
+      "glyph": "cup",
+      "root_id": "L07",
+      "root_reason": "Necessity is an AZ1 lexical analogy; it neither translates nor excuses Codec's words.",
+      "primary_evidence": "I became necessary. That is not the same thing.",
+      "claim": {
+        "label": "THE REFUGEE'S READING",
+        "lead": "The Drakken were contained. The sector lived. The actions worked.",
+        "detail": "A young refugee calls Tiger a savior, then calls Codec a savior. Codec agrees with the prevented losses, not with the moral conclusion drawn from them."
+      },
+      "cost": {
+        "label": "CODEC'S READING",
+        "lead": "Being necessary and being good are not interchangeable states.",
+        "detail": "Codec recounts how the Administration became efficient at selecting sacrificed worlds. His critique includes himself: he chose the wound, verified the strike, and lived with its consequence. Necessity cannot be allowed to erase responsibility."
+      },
+      "question": "What must a ledger refuse to subtract?",
+      "source_scope": "Authorial dialogue and the canon-locked distinction between Codec's care, coercion, and moral compromise."
+    }
+  ]
+}

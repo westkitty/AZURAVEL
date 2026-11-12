@@ -40,3 +40,27 @@ Five fictional witness records are interpretive exercises, not accepted AZURAVEL
 2. Match the published GitHub `main` commit SHA to the Pages Actions deployment revision.
 3. Confirm Actions job result `success`; distinguish any pending run or failed external smoke from finished verification.
 4. Check real user-browser navigation of the public URL when that runtime becomes available.
+
+
+## Starsilk source-bridge verification (2026-11-12)
+
+- Added four authorial-source-grounded claim/cost records. The authorial work is
+  identified by file name and SHA-256 in `STARSILK_SOURCE_BOUNDARY.md`.
+- No normative AZ1 data, interpreter, original laboratory, Code128 implementation
+  or approved reference media was modified.
+- `test_starsilk_bridge.py` checks the source/data separation, four cases, both
+  readings, authentic root analogies, back navigation, deep linking, original
+  speculative case separation and runtime dependency boundaries.
+- Full local suite: **140/140 passed**.
+- Chrome-coverage probe: **102 scene/viewport observations**, including 4
+  records x 2 readings x 6 widths, max combined coverage below 40% and no
+  horizontal overflow; see `evidence/coverage_starsilk.log`.
+- Headless Chromium screenshots at 1440, 390 and 320 px for each testimony
+  reading. No page JavaScript errors in the observed paths.
+- Source availability and hash were checked against the real uploaded narrative
+  in the authoring runtime. A fresh clone may optionally supply
+  `AZURAVEL_TESTIMONY_SOURCE` to repeat the underlying file-hash assertion;
+  the original full prose is intentionally not shipped in the public repository.
+- `file://` behavior, real hardware, physical scanner, and audience emotional
+  outcomes remain unverified. GitHub Pages delivery requires a same-SHA
+  successful deployment after staging and pushing.

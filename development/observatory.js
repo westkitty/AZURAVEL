@@ -2,6 +2,8 @@
 const $=id=>document.getElementById(id);
 const DATA=JSON.parse($('az-data').textContent);
 const ENTRIES=DATA.entries;
+const STAR_SOURCE=JSON.parse($('starsilk-data').textContent);
+const STAR_RECORDS=STAR_SOURCE.cases;
 const BY_ID=new Map(ENTRIES.map(e=>[e.id,e]));
 const DOMAINS=[...new Set(ENTRIES.map(e=>e.domain))];
 const ROLES=['CONC','EVT','SRC','PAT','RES','CTR'];
@@ -16,24 +18,26 @@ const RECORDS=[
 const HOST=$('observatory'),NODES=$('field-nodes'),FILM=$('ribbon-film'),CANVAS=$('strata-canvas'),CTX=CANVAS.getContext('2d',{alpha:true});
 const STORAGE='azuravel.unwitnessed.v1';
 const REDUCED=matchMedia('(prefers-reduced-motion: reduce)');
-const session={phase:'threshold',domain:null,id:'I01',state:'00',caseIndex:0,visited:new Set(),roles:new Set(),counter:false,motionStopped:false,sound:false,reveal:false};
+const session={phase:'threshold',domain:null,id:'I01',state:'00',caseIndex:0,visited:new Set(),roles:new Set(),counter:false,motionStopped:false,sound:false,reveal:false,witnessIndex:0,witnessLens:'claim',witnessSeen:new Set(),witnessReturn:null};
 let soundCtx=null,soundNodes=[],clock=0,width=0,height=0,dpr=1;
 function report(message){$('event-announcer').textContent=message;}
 function saved(){try{const s=JSON.parse(localStorage.getItem(STORAGE)||'null');return s&&typeof s==='object'?s:null;}catch{return null;}}
-function store(){try{localStorage.setItem(STORAGE,JSON.stringify({visited:[...session.visited],roles:[...session.roles],counter:session.counter,seen:session.reveal}));}catch{/* Persistence is optional. */}}
-function loadProgress(){const s=saved();if(!s)return;for(const id of s.visited||[])if(BY_ID.has(id))session.visited.add(id);for(const r of s.roles||[])if(ROLES.includes(r))session.roles.add(r);session.counter=!!s.counter;session.reveal=!!s.seen;}
+function store(){try{localStorage.setItem(STORAGE,JSON.stringify({visited:[...session.visited],roles:[...session.roles],counter:session.counter,seen:session.reveal,witnessSeen:[...session.witnessSeen]}));}catch{/* Persistence is optional. */}}
+function loadProgress(){const s=saved();if(!s)return;for(const id of s.visited||[])if(BY_ID.has(id))session.visited.add(id);for(const r of s.roles||[])if(ROLES.includes(r))session.roles.add(r);session.counter=!!s.counter;session.reveal=!!s.seen;for(const id of s.witnessSeen||[])if(STAR_RECORDS.some(r=>r.id===id))session.witnessSeen.add(id);}
 function recordAvailable(){if(session.visited.size<1)return 1;if(!session.counter)return 2;if(session.visited.size<3)return 3;if(session.visited.size<4||session.roles.size<4)return 4;return 5;}
 function roleForm(entry,code){return entry.forms.find(f=>f.state===code)||entry.forms[0];}
 function entry(){return BY_ID.get(session.id)||ENTRIES[0];}
-function writeHash(){if(session.phase==='threshold')return;let route=session.phase==='forms'||session.phase==='differential'?'root='+session.id+'&state='+session.state:session.phase==='roots'?'domain='+encodeURIComponent(session.domain):session.phase==='records'?'record='+session.caseIndex:'index';if(location.hash!=='#'+route){try{history.replaceState(null,'','#'+route);}catch{}}}
-function readHash(){const v=new URLSearchParams(location.hash.replace(/^#/,''));const root=v.get('root'),code=v.get('state'),domain=v.get('domain'),rec=v.get('record');if(root&&BY_ID.has(root)){session.id=root;session.domain=BY_ID.get(root).domain;session.state=roleForm(entry(),code).state;session.phase='forms';session.reveal=true;return true;}if(domain&&DOMAINS.includes(domain)){session.domain=domain;session.phase='roots';session.reveal=true;return true;}if(rec!==null&&/^\d+$/.test(rec)){session.caseIndex=Math.min(recordAvailable()-1,+rec);session.phase='records';session.reveal=true;return true;}if(location.hash==='#index'){session.phase='sectors';session.reveal=true;return true;}return false;}
-function scene(phase){session.phase=phase;session.reveal=true;HOST.dataset.phase=phase;$('threshold').hidden=phase!=='threshold';$('field').hidden=phase==='threshold';$('differential').hidden=phase!=='differential';$('connection-status').textContent=phase==='threshold'?'UNSEALED / LOCAL RECONSTRUCTION':'AZ1 / RECONSTRUCTION ACTIVE';writeHash();paint();}
+function writeHash(){if(session.phase==='threshold')return;let route=session.phase==='forms'||session.phase==='differential'?'root='+session.id+'&state='+session.state:session.phase==='roots'?'domain='+encodeURIComponent(session.domain):session.phase==='records'?'record='+session.caseIndex:session.phase==='witness'?'witness='+STAR_RECORDS[session.witnessIndex].id+'&lens='+session.witnessLens:'index';if(location.hash!=='#'+route){try{history.replaceState(null,'','#'+route);}catch{}}}
+function readHash(){const v=new URLSearchParams(location.hash.replace(/^#/,''));const root=v.get('root'),code=v.get('state'),domain=v.get('domain'),rec=v.get('record'),wit=v.get('witness'),lens=v.get('lens');if(wit){const i=STAR_RECORDS.findIndex(r=>r.id===wit);if(i>=0){session.witnessIndex=i;session.witnessLens=lens==='cost'?'cost':'claim';session.phase='witness';session.reveal=true;return true;}}if(root&&BY_ID.has(root)){session.id=root;session.domain=BY_ID.get(root).domain;session.state=roleForm(entry(),code).state;session.phase='forms';session.reveal=true;return true;}if(domain&&DOMAINS.includes(domain)){session.domain=domain;session.phase='roots';session.reveal=true;return true;}if(rec!==null&&/^\d+$/.test(rec)){session.caseIndex=Math.min(recordAvailable()-1,+rec);session.phase='records';session.reveal=true;return true;}if(location.hash==='#index'){session.phase='sectors';session.reveal=true;return true;}return false;}
+function scene(phase){session.phase=phase;session.reveal=true;HOST.dataset.phase=phase;$('threshold').hidden=phase!=='threshold';$('field').hidden=phase==='threshold';$('differential').hidden=phase!=='differential';$('connection-status').textContent=phase==='threshold'?'UNSEALED / LOCAL RECONSTRUCTION':phase==='witness'?'STARSILK / AUTHORIAL READING':'AZ1 / RECONSTRUCTION ACTIVE';writeHash();paint();}
 function start(){session.phase='sectors';scene('sectors');report('Boundary crossed. One hundred lexical roots are represented by ten sectors. Select a sector.');}
 function goSectors(){session.domain=null;scene('sectors');report('Returned to the outer index.');}
 function goRoots(d){if(!DOMAINS.includes(d))return;session.domain=d;scene('roots');report(d+' sector. Ten registered lexical roots available.');}
 function goForms(id,code='00'){if(!BY_ID.has(id))return;const e=BY_ID.get(id);session.id=id;session.domain=e.domain;session.state=roleForm(e,code).state;session.visited.add(id);session.roles.add(roleForm(e,code).role);store();scene('forms');report(e.concept+', '+roleForm(e,session.state).role+'.');}
 function changeForm(code){const f=roleForm(entry(),code);session.state=f.state;session.roles.add(f.role);if(f.role==='CTR')session.counter=true;store();scene('forms');report(f.word+' is the '+f.role+' state: '+f.meaning+'.');}
 function goDifferential(){if(!BY_ID.has(session.id))session.id='I01';scene('differential');report('Contrast: negation states an event does not occur. A counter-event states that suppression or reversal occurs.');}
+function goWitness(which=0,lens='claim'){const i=typeof which==='number'?which:STAR_RECORDS.findIndex(r=>r.id===which);if(i<0||i>=STAR_RECORDS.length)return;session.witnessIndex=i;session.witnessLens=lens==='cost'?'cost':'claim';if(session.witnessLens==='cost')session.witnessSeen.add(STAR_RECORDS[i].id);store();scene('witness');report('Source-bound Starsilk testimony: '+STAR_RECORDS[i].title+'. '+(session.witnessLens==='cost'?'Consequences opened.':'Claim opened.'));}
+function witnessLens(lens){goWitness(session.witnessIndex,lens);}
 function goRecord(index=0){if(index<0||index>=recordAvailable())index=0;session.caseIndex=index;scene('records');report('Interpretive case file '+(index+1)+', '+RECORDS[index].title+'.');}
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function action(text,fn,kind=''){const b=el('button',kind?kind+'-action':'',text);b.type='button';b.addEventListener('click',fn);$('reader-actions').append(b);return b;}
@@ -53,7 +57,15 @@ function updateReader(){const e=entry(),f=roleForm(e,session.state);if(session.p
  if(f.role==='CTR'){action('See the difference',goDifferential,'primary');action('Evidence files',()=>goRecord(Math.min(2,recordAvailable()-1)));}
  if(f.role!=='CTR')action('Counter-event',()=>changeForm('12'),'primary');
  if(f.role==='RES')action('Compare with counteraction',()=>changeForm('12'));
- action('Other roots',()=>goRoots(e.domain));anchor('Complete AZ1 lab ↗','./AZURAVEL_ATLAS.html#lab/'+e.id+'/'+f.state);
+ action('Other roots',()=>goRoots(e.domain));if(session.witnessReturn)action('Return to testimony',()=>goWitness(session.witnessReturn));anchor('Complete AZ1 lab ↗','./AZURAVEL_ATLAS.html#lab/'+e.id+'/'+f.state);
+}else if(session.phase==='witness'){
+ const w=STAR_RECORDS[session.witnessIndex],display=w[session.witnessLens],analogy=BY_ID.get(w.root_id);
+ reader({key:w.seal,kind:'STARSILK / '+(session.witnessLens==='cost'?'COST':'CLAIM'),title:w.title,lead:display.lead,sub:'Source line: '+w.primary_evidence+' '+display.detail+' '+(session.witnessLens==='cost'?w.question:''),source:'CODEC TESTIMONY / SOURCE-BOUND / NOT AZ1'});
+ if(session.witnessLens==='claim')action('Examine the cost',()=>witnessLens('cost'),'primary');
+ else action('Revisit the claim',()=>witnessLens('claim'),'primary');
+ if(session.witnessIndex<STAR_RECORDS.length-1)action('Next testimony',()=>goWitness(session.witnessIndex+1));
+ action('Trace '+analogy.concept+' in AZ1',()=>{session.witnessReturn=w.id;goForms(analogy.id);});
+ anchor('Source boundary','./STARSILK_SOURCE_BOUNDARY.md');
 }else if(session.phase==='differential'){
  reader({key:'CONTRAST / AZ1',kind:'MORPHOLOGY / VERIFIED',title:'This is not nothing.',lead:'An absence and an act of erasure are different observations.',sub:'sa + EVT negates an occurrence. CTR is its own predicate: suppression, reversal or counteraction actually takes place. The distinction is part of AZ1, not a claim that any historical event occurred.',source:'AZ1 SPECIFICATION / §3 • NEGATION ≠ COUNTER-EVENT'});
  action('Return to six states',()=>scene('forms'),'primary');action('A case of silence',()=>goRecord(Math.min(2,recordAvailable()-1)));anchor('Read the rule ↗','./AZURAVEL_SPEC.md');
@@ -64,11 +76,12 @@ function updateReader(){const e=entry(),f=roleForm(e,session.state);if(session.p
  else if(session.caseIndex<RECORDS.length-1)action('Unlock: explore the index',()=>goForms(r.entry),'primary');
  action('Trace '+root.root,()=>goForms(root.id));action('The outer index',goSectors);
 }
- $('field-coordinate').textContent=session.phase==='forms'?'[ '+e.id+' / '+f.state+' / '+f.role+' ]':session.phase==='records'?'[ FIELD NOTE '+String(session.caseIndex+1).padStart(2,'0')+' / '+RECORDS.length+' ]':'[ INDEX / '+(session.domain||'ALL SECTORS').toUpperCase()+' ]';
- $('discovery-count').textContent=session.visited.size+' / 100 INVESTIGATED';
+ $('field-coordinate').textContent=session.phase==='forms'?'[ '+e.id+' / '+f.state+' / '+f.role+' ]':session.phase==='records'?'[ FIELD NOTE '+String(session.caseIndex+1).padStart(2,'0')+' / '+RECORDS.length+' ]':session.phase==='witness'?'[ STAR SILK / '+(session.witnessIndex+1)+' OF '+STAR_RECORDS.length+' ]':'[ INDEX / '+(session.domain||'ALL SECTORS').toUpperCase()+' ]';
+ $('discovery-count').textContent=session.phase==='witness'?session.witnessSeen.size+' / 4 COST READINGS':session.visited.size+' / 100 INVESTIGATED';
  $('rail-index').setAttribute('aria-current',session.phase==='sectors'||session.phase==='roots'||session.phase==='forms'?'true':'false');
  $('rail-records').setAttribute('aria-current',session.phase==='records'?'true':'false');
  $('rail-contrast').setAttribute('aria-current',session.phase==='differential'?'true':'false');
+ $('rail-witness').setAttribute('aria-current',session.phase==='witness'?'true':'false');
 }
 function point(i,n,mode){if(innerWidth<761&&mode==='record')return{x:[23,50,77][i],y:18};if(innerWidth<761){const col=mode==='form'?i%3:i%5;const row=mode==='form'?Math.floor(i/3):Math.floor(i/5);const x=mode==='form'?[21,50,79][col]:[13,31.5,50,68.5,87][col];return{x,y:row?52:16};}
  const angle=-Math.PI/2+(i/n)*Math.PI*2;const rx=mode==='form'?30:31,ry=mode==='form'?27:25;return{x:54+rx*Math.cos(angle),y:33+ry*Math.sin(angle)};
@@ -78,16 +91,17 @@ function updateNodes(){NODES.replaceChildren();const phase=session.phase;
  if(phase==='sectors')DOMAINS.forEach((domain,i)=>{const p=point(i,DOMAINS.length,'domain');node({title:domain,sub:'TEN ROOTS',count:String(i+1).padStart(2,'0'),...p,kind:'domain',click:()=>goRoots(domain)});});
  if(phase==='roots')ENTRIES.filter(e=>e.domain===session.domain).forEach((e,i)=>{const p=point(i,10,'root');node({title:e.root,sub:e.concept,count:e.id,...p,kind:'root',click:()=>goForms(e.id)});});
  if(phase==='forms')entry().forms.forEach((f,i)=>{const p=point(i,6,'form');node({title:f.role,sub:f.word,count:f.state,current:f.state===session.state,...p,kind:'form',click:()=>changeForm(f.state)});});
+ if(phase==='witness')STAR_RECORDS.forEach((w,i)=>{const p=point(i,STAR_RECORDS.length,'witness');node({title:w.short,sub:w.glyph.toUpperCase(),count:String(i+1).padStart(2,'0'),current:i===session.witnessIndex,...p,kind:'witness',click:()=>goWitness(i)});});
  if(phase==='records'){const r=RECORDS[session.caseIndex];[r.entry,...r.linked].forEach((id,i)=>{const e=BY_ID.get(id);const p=point(i,3,'record');node({title:e.concept,sub:e.root,count:e.id,...p,kind:'root',click:()=>goForms(e.id)});});}
 }
 function updateSceneLabels(){const e=entry(),f=roleForm(e,session.state),phase=session.phase;
- const views={sectors:['THE COMPLETE REGISTER','000 / 100'],roots:[(session.domain||'').toUpperCase()+' / FIELD','010 / 060'],forms:[e.id+' / '+e.domain.toUpperCase(),f.role+' / '+f.state],records:['INTERPRETIVE RECONSTRUCTION','WITNESS / '+String(session.caseIndex+1).padStart(2,'0')],differential:['THE CRITICAL DISTINCTION','NOT AN ABSENCE']};
+ const views={sectors:['THE COMPLETE REGISTER','000 / 100'],roots:[(session.domain||'').toUpperCase()+' / FIELD','010 / 060'],forms:[e.id+' / '+e.domain.toUpperCase(),f.role+' / '+f.state],records:['INTERPRETIVE RECONSTRUCTION','WITNESS / '+String(session.caseIndex+1).padStart(2,'0')],differential:['THE CRITICAL DISTINCTION','NOT AN ABSENCE'],witness:['AUTHORIAL STARSILK TESTIMONY','NOT AZ1 CANON']};
  $('scene-designation').textContent=views[phase]?.[0]||'THE INSTRUMENT';$('scene-number').textContent=views[phase]?.[1]||'';
- $('large-word').textContent=phase==='forms'?f.word:phase==='roots'?session.domain.toLowerCase():phase==='sectors'?'600':phase==='records'?RECORDS[session.caseIndex].key:'';
+ $('large-word').textContent=phase==='forms'?f.word:phase==='roots'?session.domain.toLowerCase():phase==='sectors'?'600':phase==='records'?RECORDS[session.caseIndex].key:phase==='witness'?STAR_RECORDS[session.witnessIndex].short:'';
  $('large-syllables').replaceChildren();if(phase==='forms')for(let i=0;i<3;i++)$('large-syllables').append(el('span','',f.word.slice(i*2,i*2+2)));
  $('large-subtitle').textContent=phase==='forms'?e.concept.toUpperCase()+' / '+f.role+' / '+f.derivation:phase==='roots'?'TEN ROOTS / SIXTY FORMS':phase==='sectors'?'SIX POSSIBLE STATES FOR EACH OF ONE HUNDRED ROOTS':'';
  const evt=roleForm(e,'01'),ctr=roleForm(e,'12');$('absence-form').textContent='sa '+evt.word;$('counter-form').textContent=ctr.word;
- $('horizon-bottom').textContent=phase==='forms'?'[ '+e.id+' : '+f.role+' : '+f.state+' ]':phase==='differential'?'[ NOT EQUIVALENT ]':'[ NO COORDINATES TRANSMITTED ]';
+ $('horizon-bottom').textContent=phase==='forms'?'[ '+e.id+' : '+f.role+' : '+f.state+' ]':phase==='differential'?'[ NOT EQUIVALENT ]':phase==='witness'?'[ INTERPRETIVE SCHEMATIC / NOT TO SCALE ]':'[ NO COORDINATES TRANSMITTED ]';
 }
 function paint(){if(session.phase!=='threshold'){updateSceneLabels();updateReader();updateNodes();}animateScene();updateMotion();}
 function resize(){const rect=CANVAS.getBoundingClientRect();width=Math.max(1,rect.width);height=Math.max(1,rect.height);dpr=Math.min(devicePixelRatio||1,1.75);CANVAS.width=Math.round(width*dpr);CANVAS.height=Math.round(height*dpr);CTX.setTransform(dpr,0,0,dpr,0,0);animateScene();if(session.phase!=='threshold')updateNodes();}
@@ -112,14 +126,48 @@ function drawRibbon(phase,alpha){const ctx=CTX,w=width,h=height;const e=entry(),
   for(let j=0;j<seg;j++){const t=j/seg,point=points[j];if(phase==='differential'&&s===0&&j>12&&j<29)continue;const len=(active?9:4)+(j%7)*.65;const dx=(j%2?1:-1)*Math.min(9,w*.008);stroke([[point[0]-len+dx,point[1]],[point[0]+len+dx,point[1]]],active?'rgba(66,187,255,'+(.18+alpha*.58)+')':'rgba(47,117,180,.16)',j%9===0?2:1,active&&j%5===0?7:0);}
  }
 }
-function drawFrame(progress){if(!CTX)return;CTX.clearRect(0,0,width,height);const a=Math.max(0,Math.min(1,progress));if(session.phase==='threshold')drawRibbon('threshold',a);if(session.phase==='sectors'||session.phase==='roots')drawRegistry(a);if(session.phase==='forms'){drawRegistry(.3);drawRibbon('forms',a);}if(session.phase==='differential'){drawRegistry(.12);drawRibbon('differential',a);}if(session.phase==='records'){drawRegistry(.08);drawRibbon('records',a);} }
+
+function drawWitness(alpha){
+ const ctx=CTX,w=width,h=height,i=session.witnessIndex,cost=session.witnessLens==='cost';
+ const cx=w*(innerWidth<761?.51:.60),cy=h*(innerWidth<761?.43:.43),R=Math.min(w*.24,h*.265),lit='rgba(66,184,255,'+(.28+.43*alpha)+')';
+ ctx.save();ctx.lineWidth=1.1;ctx.strokeStyle=lit;ctx.shadowBlur=0;
+ if(i===0){
+   // Blood Ring: orphaned orbital material; deliberately no cartoon halo.
+   ctx.beginPath();ctx.ellipse(cx,cy,R*1.45,R*.44,-.17,0,Math.PI*2);ctx.strokeStyle=cost?'rgba(182,79,83,.7)':lit;ctx.stroke();
+   ctx.beginPath();ctx.ellipse(cx,cy,R*.67,R*.67,0,0,Math.PI*2);ctx.strokeStyle='rgba(43,110,145,.35)';ctx.stroke();
+   for(let j=0;j<92;j++){const t=j*2*Math.PI/92,x=cx+Math.cos(t)*R*1.45,y=cy+Math.sin(t)*R*.44;
+     const size=(j%11===0?4:1.4);stroke([[x-size,y],[x+size,y]],cost?'rgba(194,101,100,.72)':'rgba(89,187,240,.48)',j%7===0?1.3:.7);}
+ }else if(i===1){
+   // Sampled star marks, not a casualty count or actual Siege Wall map.
+   ctx.beginPath();ctx.arc(cx,cy,R*.79,0,Math.PI*2);ctx.strokeStyle='rgba(61,132,171,.21)';ctx.stroke();
+   for(let j=0;j<56;j++){const t=j*2*Math.PI/56,x=cx+Math.cos(t)*R*(.82+(j%3)*.1),y=cy+Math.sin(t)*R*(.82+(j%5)*.09);
+     if(cost){ctx.beginPath();ctx.arc(x,y,1.9+(j%3),0,Math.PI*2);ctx.fillStyle='#020509';ctx.fill();ctx.strokeStyle='rgba(67,145,203,.4)';ctx.stroke();}
+     else{stroke([[x-2,y],[x+2,y]],'rgba(99,187,234,.79)',1.1);stroke([[x,y-2],[x,y+2]],'rgba(99,187,234,.79)',1.1);}
+   }
+   stroke([[cx-R*1.45,cy+R*.36],[cx+R*1.45,cy-R*.36]],'rgba(34,107,167,.36)',1);
+ }else if(i===2){
+   ctx.beginPath();ctx.arc(cx,cy,R*.86,0,Math.PI*2);ctx.strokeStyle=lit;ctx.stroke();
+   if(cost){stroke([[cx-R*.55,cy-R*.49],[cx-R*.16,cy-R*.12],[cx+R*.08,cy+R*.22],[cx+R*.57,cy+R*.49]],'rgba(195,93,91,.74)',2,5);
+     stroke([[cx+R*.05,cy+R*.2],[cx-R*.29,cy+R*.49]],'rgba(195,93,91,.54)',1);}
+   for(let k=-2;k<=2;k++)stroke([[cx-R*.7,cy+k*R*.24],[cx+R*.7,cy+(k+1)*R*.18]],'rgba(82,154,203,'+(cost?.25:.14)+')',1);
+ }else{
+   // The source's red reflection on the cup, not a literal Blood Ring.
+   ctx.beginPath();ctx.ellipse(cx,cy-R*.40,R*.36,R*.11,0,0,Math.PI*2);ctx.strokeStyle=cost?'rgba(186,79,76,.85)':'rgba(125,159,180,.5)';ctx.lineWidth=cost?2:1;ctx.stroke();
+   ctx.beginPath();ctx.moveTo(cx-R*.36,cy-R*.40);ctx.lineTo(cx-R*.26,cy+R*.37);ctx.quadraticCurveTo(cx,cy+R*.6,cx+R*.26,cy+R*.37);ctx.lineTo(cx+R*.36,cy-R*.40);ctx.strokeStyle='rgba(102,168,201,.65)';ctx.stroke();
+   ctx.beginPath();ctx.ellipse(cx+R*.38,cy-R*.02,R*.20,R*.29,-.4,-1.25,1.25);ctx.stroke();
+   stroke([[cx-R*.27,cy+R*.35],[cx+R*.27,cy+R*.35]],'rgba(99,162,198,.28)',1);
+ }
+ ctx.restore();
+}
+
+function drawFrame(progress){if(!CTX)return;CTX.clearRect(0,0,width,height);const a=Math.max(0,Math.min(1,progress));if(session.phase==='threshold')drawRibbon('threshold',a);if(session.phase==='sectors'||session.phase==='roots')drawRegistry(a);if(session.phase==='forms'){drawRegistry(.3);drawRibbon('forms',a);}if(session.phase==='differential'){drawRegistry(.12);drawRibbon('differential',a);}if(session.phase==='records'){drawRegistry(.08);drawRibbon('records',a);}if(session.phase==='witness'){drawWitness(a);} }
 function animateScene(){if(clock)cancelAnimationFrame(clock);if(REDUCED.matches||session.motionStopped){drawFrame(1);return;}let start=performance.now();const tick=t=>{drawFrame(Math.min(1,(t-start)/920));if(t-start<920&&document.visibilityState!=='hidden')clock=requestAnimationFrame(tick);else clock=0;};clock=requestAnimationFrame(tick);}
 function updateMotion(){const paused=REDUCED.matches||session.motionStopped||document.visibilityState==='hidden';const p=FILM;const toggle=$('motion-toggle');if(paused){p.pause();p.style.display='none';}else{p.style.display='';const r=p.play();if(r&&r.catch)r.catch(()=>{p.style.display='none';});}$('motion-label').textContent=session.motionStopped?'RESUME MOTION':'PAUSE MOTION';toggle.setAttribute('aria-pressed',session.motionStopped?'true':'false');toggle.setAttribute('aria-label',session.motionStopped?'Resume movement':'Pause movement');}
 async function toggleSound(){if(session.sound){session.sound=false;for(const n of soundNodes){try{n.stop?.();}catch{}}soundNodes=[];if(soundCtx){try{await soundCtx.close();}catch{}}soundCtx=null;}else{const AC=window.AudioContext||window.webkitAudioContext;if(!AC){report('Audio unavailable on this browser.');return;}try{const a=new AC();const gain=a.createGain();gain.gain.value=.0001;gain.connect(a.destination);const tones=[55,82.41];for(let i=0;i<tones.length;i++){const o=a.createOscillator();o.type='sine';o.frequency.value=tones[i];o.connect(gain);o.start();soundNodes.push(o);}gain.gain.linearRampToValueAtTime(.013,a.currentTime+.8);soundCtx=a;session.sound=true;}catch{session.sound=false;report('Audio could not be started.');}}
  $('sound-label').textContent=session.sound?'SOUND ON':'SOUND OFF';$('sound-toggle').setAttribute('aria-pressed',session.sound?'true':'false');$('sound-toggle').setAttribute('aria-label',session.sound?'Disable quiet ambient audio':'Enable quiet ambient audio');}
 function onKey(ev){const tag=document.activeElement?.tagName;if(['INPUT','TEXTAREA','SELECT'].includes(tag))return;if(ev.key==='Escape'&&session.phase!=='threshold'){if(session.phase==='forms')goRoots(entry().domain);else if(session.phase==='roots')goSectors();else if(session.phase==='differential')scene('forms');else goSectors();ev.preventDefault();}else if((ev.key==='ArrowRight'||ev.key==='ArrowLeft')&&session.phase==='forms'&&document.activeElement===document.body){const i=entry().forms.findIndex(x=>x.state===session.state);changeForm(entry().forms[(i+(ev.key==='ArrowRight'?1:5))%6].state);ev.preventDefault();}}
-function init(){loadProgress();$('enter-observatory').addEventListener('click',start);$('motion-toggle').addEventListener('click',()=>{session.motionStopped=!session.motionStopped;updateMotion();animateScene();});$('sound-toggle').addEventListener('click',toggleSound);
- for(const b of document.querySelectorAll('[data-route]'))b.addEventListener('click',()=>{const x=b.dataset.route;if(x==='records')goRecord(Math.min(session.caseIndex,recordAvailable()-1));else if(x==='differential')goDifferential();else goSectors();});
+function init(){loadProgress();$('enter-observatory').addEventListener('click',start);$('enter-testimony').addEventListener('click',()=>goWitness(0));$('motion-toggle').addEventListener('click',()=>{session.motionStopped=!session.motionStopped;updateMotion();animateScene();});$('sound-toggle').addEventListener('click',toggleSound);
+ for(const b of document.querySelectorAll('[data-route]'))b.addEventListener('click',()=>{const x=b.dataset.route;if(x==='witness')goWitness(session.witnessIndex);else if(x==='records')goRecord(Math.min(session.caseIndex,recordAvailable()-1));else if(x==='differential')goDifferential();else goSectors();});
  document.addEventListener('keydown',onKey);window.addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',()=>{updateMotion();if(soundCtx){if(document.hidden)soundCtx.suspend();else if(session.sound)soundCtx.resume();}if(!document.hidden)animateScene();});
  const onReduce=()=>{updateMotion();animateScene();};if(REDUCED.addEventListener)REDUCED.addEventListener('change',onReduce);else if(REDUCED.addListener)REDUCED.addListener(onReduce);
  window.addEventListener('pagehide',()=>{if(clock)cancelAnimationFrame(clock);FILM.pause();if(soundCtx)soundCtx.close();});
@@ -127,6 +175,6 @@ function init(){loadProgress();$('enter-observatory').addEventListener('click',s
  if(readHash())scene(session.phase);else{HOST.dataset.phase='threshold';$('threshold').hidden=false;$('field').hidden=true;}
  resize();updateMotion();report('AZURAVEL observatory loaded. Cross the boundary to explore.');}
 // Read-only introspection is used by project regression tests. It cannot edit the lexicon.
-window.AZURAVEL_OBSERVATORY_TEST=Object.freeze({snapshot:()=>({phase:session.phase,domain:session.domain,id:session.id,state:session.state,visited:[...session.visited],roles:[...session.roles],availableRecords:recordAvailable(),counter:session.counter}),enter:start,openDomain:goRoots,openRoot:goForms,openRole:changeForm,openRecord:goRecord,contrast:goDifferential,roleForm:(id,code)=>{const e=BY_ID.get(id);return e?roleForm(e,code):null;},records:()=>RECORDS.map(r=>({key:r.key,entry:r.entry})),nodeCount:()=>NODES.children.length});
+window.AZURAVEL_OBSERVATORY_TEST=Object.freeze({snapshot:()=>({phase:session.phase,domain:session.domain,id:session.id,state:session.state,visited:[...session.visited],roles:[...session.roles],availableRecords:recordAvailable(),counter:session.counter,witnessIndex:session.witnessIndex,witnessLens:session.witnessLens,witnessViewed:session.witnessSeen.size}),enter:start,openDomain:goRoots,openRoot:goForms,openRole:changeForm,openRecord:goRecord,contrast:goDifferential,roleForm:(id,code)=>{const e=BY_ID.get(id);return e?roleForm(e,code):null;},records:()=>RECORDS.map(r=>({key:r.key,entry:r.entry})),nodeCount:()=>NODES.children.length,openWitness:goWitness,openWitnessLens:witnessLens,source:()=>({protocol:STAR_SOURCE.protocol,records:STAR_RECORDS.map(r=>({id:r.id,root_id:r.root_id,source_scope:r.source_scope}))})});
 init();
 })();

@@ -26,11 +26,11 @@ Requires Python 3.10+ for source generation; no runtime network dependencies or 
 ```bash
 python3 development/build_observatory.py
 python3 development/build_uplift.py
-python3 -m unittest -q test_azuravel.py test_uplift.py test_observatory.py
+python3 -m unittest -q test_azuravel.py test_uplift.py test_observatory.py test_starsilk_bridge.py
 python3 development/coverage_probe.py
 ```
 
-The first build deterministically embeds the unchanged JSON data into `index.html`; the second independently reconstructs the preserved lab. Browser tests use Playwright and a system Chromium executable, so that **test runner**, unlike the shipped product, needs separate test tooling. The coverage probe assesses 7 phases × 6 viewports, from 320px to 1440px. Evidence lives under `evidence/`; detailed limits in `OBSERVATORY_VALIDATION.md`.
+The first build deterministically embeds the unchanged JSON data into `index.html`; the second independently reconstructs the preserved lab. Browser tests use Playwright and a system Chromium executable, so that **test runner**, unlike the shipped product, needs separate test tooling. The coverage probe assesses the original seven states and both readings of all four Starsilk records across six viewports (102 observations), from 320px to 1440px. Evidence lives under `evidence/`; detailed limits in `OBSERVATORY_VALIDATION.md`.
 
 ## Source, design and release
 
@@ -42,3 +42,19 @@ The first build deterministically embeds the unchanged JSON data into `index.htm
 - `westkitty/AZURAVEL`, `main`, publishes through `.github/workflows/pages.yml` to GitHub Pages. Check the Actions deployment for the precise published revision rather than assuming every local source edit was delivered.
 
 The observatory is an interpretation of the language, not an external authority on its fictional universe. AZ1 remains the source of truth; real Code 128 exports still require black bars on white, the specified checksum and quiet zones. No new lexical root, arbitrary English translation, or fabricated barcode capability is introduced.
+
+
+## Starsilk testimony lens (optional)
+
+The observatory includes **The Cost of Necessity**, a four-record,
+source-grounded interpretive surface based on the Starsilk project scene
+`Codec's Radicalization Journey.txt`. Enter it from the threshold via
+"A second testimony exists" or from the observatory's fourth navigation
+station. Each record can be read as an operational claim or through its
+human/planetary cost, then linked to an AZ1 root as an explicit **analogy**,
+not a translation or an assertion that the two universes share canon.
+
+Read `STARSILK_SOURCE_BOUNDARY.md` for provenance and exclusions. The original
+AZ1 atlas, language data, scanner, and five clearly speculative AZURAVEL
+records remain intact. All stars/planets/rings in the new lens are schematic
+and deliberately not to scale.

@@ -10,9 +10,15 @@ with sync_playwright() as p:
  b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  for w,h in [(320,700),(360,780),(390,844),(768,900),(1024,768),(1440,900)]:
   page=b.new_page(viewport={'width':w,'height':h},reduced_motion='reduce');page.set_content(html)
-  paths=[('threshold',lambda:None),('sectors',lambda:page.locator('#enter-observatory').click()),('roots',lambda:page.locator('.glyph-node[data-kind=domain]').first.click()),('forms',lambda:page.locator('.glyph-node[data-kind=root]').first.click()),('counter',lambda:page.locator('.glyph-node[data-kind=form]').last.click()),('difference',lambda:page.evaluate('AZURAVEL_OBSERVATORY_TEST.contrast()')),('records',lambda:page.locator('#rail-records').click())]
+  paths=[('threshold',lambda:None),('sectors',lambda:page.locator('#enter-observatory').click()),('roots',lambda:page.locator('.glyph-node[data-kind=domain]').first.click()),('forms',lambda:page.locator('.glyph-node[data-kind=root]').first.click()),('counter',lambda:page.locator('.glyph-node[data-kind=form]').last.click()),('difference',lambda:page.evaluate('AZURAVEL_OBSERVATORY_TEST.contrast()')),('records',lambda:page.locator('#rail-records').click()),('witness_claim',lambda:page.locator('#rail-witness').click()),('witness_cost',lambda:page.evaluate("AZURAVEL_OBSERVATORY_TEST.openWitnessLens('cost')"))]
   for name,enter in paths:
    enter();m=page.evaluate(JS); print(w,name,m)
    if name!='threshold' and (m['fraction']>=.4 or m['panel']>.38 or m['overflow']>1):raise SystemExit('UI CEILING FAIL: '+str((w,name,m)))
+  for i in range(4):
+   page.evaluate('(i)=>AZURAVEL_OBSERVATORY_TEST.openWitness(i)',i)
+   for lens in ('claim','cost'):
+    page.evaluate('(lens)=>AZURAVEL_OBSERVATORY_TEST.openWitnessLens(lens)',lens)
+    m=page.evaluate(JS);print(w,'witness_'+str(i)+'_'+lens,m)
+    if m['fraction']>=.4 or m['panel']>.38 or m['overflow']>1:raise SystemExit('UI CEILING FAIL: '+str((w,i,lens,m)))
   page.close()
  b.close()

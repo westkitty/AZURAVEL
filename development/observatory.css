@@ -18,3 +18,25 @@
 @media(max-width:400px){.sigil-name small{display:none}.masthead-actions{gap:8px}.action-minimal{font-size:8px}.threshold{padding-top:23svh}.threshold h1{font-size:clamp(44px,12vw,54px)}.threshold-deck{font-size:12px}.glyph-node .node-sub{display:none}.glyph-node{min-width:47px}.glyph-node[data-kind=root]{min-width:42px;max-width:55px}.glyph-node[data-kind=root] .node-title{font-size:13px}.field-object{top:35%}.strata-rail{bottom:calc(24svh + 65px)}}
 @media(max-height:650px){.threshold{padding-top:18svh}.threshold h1{font-size:clamp(40px,6vw,66px)}.threshold-deck{line-height:1.35;margin-bottom:13px}.threshold-footnote{margin-top:15px}.reader{max-height:24svh}.field-object{top:31%}.strata-rail{bottom:calc(24svh + 65px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.sky-video{display:none!important}.sky-poster{opacity:.56}}
+
+/* The authorial source is a separate lens, never a second AZ1 ontology. */
+.threshold-side{display:block;margin:12px 0 0;padding:8px 2px;border:0;background:transparent;color:#87bed9;font:10px/1.5 var(--mono);letter-spacing:.09em;text-align:left;text-decoration:underline;text-underline-offset:6px;cursor:pointer}
+.threshold-side:hover,.threshold-side:focus-visible{color:#e4f6ff}
+.observatory[data-phase=witness] .field-object{top:57%;left:62%;opacity:.75;pointer-events:none}
+.observatory[data-phase=witness] .large-word{font-size:clamp(27px,4vw,62px);letter-spacing:.04em}
+.observatory[data-phase=witness] .large-subtitle{font-size:9px;color:#96c0d8}
+.observatory[data-phase=witness] .reader{border-top-color:#7b6b76}
+.observatory[data-phase=witness] .reader:before{background:#9a515c}
+.observatory[data-phase=witness] .reader-source{white-space:normal;line-height:1.4;max-height:40px;overflow:auto}
+.observatory[data-phase=witness] .glyph-node[data-kind=witness]{min-width:85px}
+.observatory[data-phase=witness] .glyph-node[data-kind=witness] .node-title{font:11px var(--mono)}
+.observatory[data-phase=witness] .glyph-node[data-kind=witness][aria-current=true]:before{border-color:#a15d65;background:#8c4856}
+@media(max-width:760px){.observatory[data-phase=witness] .field-object{top:44%;left:52%}.observatory[data-phase=witness] .large-word{font-size:clamp(18px,5vw,29px)}.observatory[data-phase=witness] .glyph-node[data-kind=witness]{min-width:65px;max-width:82px}.observatory[data-phase=witness] .glyph-node[data-kind=witness] .node-title{font-size:9px}.observatory[data-phase=witness] .reader-source{font-size:8px;max-height:26px}.threshold-side{font-size:9px}}
+@media(max-width:400px){.observatory[data-phase=witness] .glyph-node[data-kind=witness]{min-width:55px;max-width:70px}.observatory[data-phase=witness] .glyph-node[data-kind=witness] .node-title{font-size:8px}}
+
+@media(max-width:760px){
+ .observatory[data-phase=witness] .reader{max-height:30svh}
+ .observatory[data-phase=witness] .strata-rail{bottom:calc(30svh + 68px)}
+ .observatory[data-phase=witness] .reader-source{max-height:23px;overflow:auto}
+ .observatory[data-phase=witness] .reader-transcript{border-bottom:1px solid rgba(99,169,212,.18)}
+}
