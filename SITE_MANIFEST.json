@@ -1,0 +1,124 @@
+{
+  "identity": "westkitty/AZURAVEL",
+  "release": "1.1-pages",
+  "protocol": "AZ1",
+  "visual_reference_count": 10,
+  "site_reference_video": "grok_video_2026-04-10-04-08-17(1).mp4",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AZURAVEL_ATLAS.html",
+      "size": 278542,
+      "sha256": "b5b08d870d7252b49710cc1619fb29e5481f5ae32ac932c518449bde1e60116e"
+    },
+    {
+      "path": "AZURAVEL_DATA.json",
+      "size": 199609,
+      "sha256": "27582c5b7bf5ad9a76d2e3a28fe26c5751bc27e787c2862aabf33653d0e8864d"
+    },
+    {
+      "path": "AZURAVEL_SPEC.md",
+      "size": 97271,
+      "sha256": "022b8deef2501340555fa8db32f6b27f89c5a2ba365bedf845a5be2aad44c8cd"
+    },
+    {
+      "path": "OPERATIONAL_STATE.md",
+      "size": 10860,
+      "sha256": "e1ac566454795750f626bc97104eadeed787b1254c591968b44b30b9bd3da402"
+    },
+    {
+      "path": "PROTECTED_HASHES.json",
+      "size": 364,
+      "sha256": "725ff1a0624a65e5daaf92c9e47593d732eae6754603b00b5800fe7a777d8459"
+    },
+    {
+      "path": "QUALITY_SCORECARD.md",
+      "size": 6625,
+      "sha256": "14c34ca9488809bba02138ee0cf476f07a92182d3f59195d62d9534b8dd60b1f"
+    },
+    {
+      "path": "README.md",
+      "size": 2417,
+      "sha256": "89198bf40a6c02b536f5c67c1b9518ccfa0e133fcad54bbe93417da68335046a"
+    },
+    {
+      "path": "SOURCE_PROMPT.md",
+      "size": 7991,
+      "sha256": "05ff11df1c8eabef946450ace9ac4888d225224ffc9658d20547657d07b6e6d0"
+    },
+    {
+      "path": "UPLIFT_REQUEST.md",
+      "size": 41247,
+      "sha256": "01e23f670a46128fa893e14513e1952b8b4bc9e7b409d05c762008ab293d237d"
+    },
+    {
+      "path": "UPLIFT_VALIDATION_REPORT.md",
+      "size": 9919,
+      "sha256": "88b72e5cd7b015f89285ef9de2b28ac5009d35c4db53e946cf498ef3ce383830"
+    },
+    {
+      "path": "VALIDATION_REPORT.md",
+      "size": 6853,
+      "sha256": "08066493886cb759dd527c6058671605263bfe22bfd2ddaebbbc72481c459300"
+    },
+    {
+      "path": "VISUAL_IDENTITY.md",
+      "size": 2841,
+      "sha256": "5976fefbe1fcfc640bc19998bea23c1c6847f9fecce6588e222b68ed919dce9c"
+    },
+    {
+      "path": "assets/azuravel-ribbons.mp4",
+      "size": 1213701,
+      "sha256": "8fc2775c8783e4c873a72558f71ddf49294b1563739ce70604bac3372d5e0a2e"
+    },
+    {
+      "path": "assets/ribbon-poster.jpg",
+      "size": 35997,
+      "sha256": "3939a3190ece2f75e05c19c4ea5c5936e7c03eca478dec77f1db6fb6e4222072"
+    },
+    {
+      "path": "azuravel_ref.py",
+      "size": 12278,
+      "sha256": "5e5538a02adf611edb1d589f651a3173c2dcb3b3d448638e7a9bb9d4398a924e"
+    },
+    {
+      "path": "development/atlas_template_base.html",
+      "size": 49058,
+      "sha256": "3a9cfd694de2f72cfdc504f5e86dfd7bb8ebed13789515fa9d0d7e87f9209e06"
+    },
+    {
+      "path": "development/build_uplift.py",
+      "size": 8790,
+      "sha256": "c514b8784077fd01bf02d6872daab8da378a8a349dd160f0d64fb48804c3826c"
+    },
+    {
+      "path": "development/uplift.css",
+      "size": 5936,
+      "sha256": "583410285000d15f849fdafab28b7a31f5eaa4120cfe688141ba0ba876716e27"
+    },
+    {
+      "path": "development/uplift.js",
+      "size": 17531,
+      "sha256": "97939e67e14b6fa587478ae926ce7275d1cbb0204915c7d37ec465f1e76042c2"
+    },
+    {
+      "path": "index.html",
+      "size": 6972,
+      "sha256": "06656c1fd64a43ecdf4c77a7de7bba9ba2e0567c2d530fe6d354a1a2c9f12a25"
+    },
+    {
+      "path": "test_azuravel.py",
+      "size": 10582,
+      "sha256": "7e527fbd664fb201750fec4eaa7e95a69745a9a1b8065711fd8c26a736927a49"
+    },
+    {
+      "path": "test_uplift.py",
+      "size": 13555,
+      "sha256": "5d7f4c709c8e9998b234c527b0ab0091a00c6c4e814186959b672d33ca00b891"
+    }
+  ]
+}
