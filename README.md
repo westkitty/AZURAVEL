@@ -18,7 +18,7 @@ Run `python -m unittest -v test_azuravel.py test_uplift.py`. Test-only browser a
 
 ## Pages
 
-GitHub repository: [`westkitty/AZURAVEL`](https://github.com/westkitty/AZURAVEL). The root `index.html` is the entrypoint. For a fresh repository, GitHub Pages requires initial enabling in Settings → Pages → Build and deployment → Source → **Deploy from a branch**, branch `main`, folder `/(root)`; once enabled, later `main` pushes publish automatically. This repository also includes `.nojekyll` to serve assets verbatim. Do not claim that Pages is live unless a remote site check confirms it.
+GitHub repository: [`westkitty/AZURAVEL`](https://github.com/westkitty/AZURAVEL). The root `index.html` is the entrypoint. The included `.github/workflows/pages.yml` deploys the root static site on each `main` push. GitHub Actions run [`43280239199`](https://github.com/westkitty/AZURAVEL/actions/runs/43280239199) reported **success** for `c565b14a33a56e7a029694cbe3a2a9b71cdf386e`; GitHub recorded the Pages environment URL as `https://westkitty.github.io/AZURAVEL/`. This proves the provider reported a deployment. Independent public-browser HTTP validation remains unverified in the current execution environment.
 
 ## Source policy
 
