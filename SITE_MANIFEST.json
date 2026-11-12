@@ -1,10 +1,19 @@
 {
   "identity": "westkitty/AZURAVEL",
-  "release": "1.1-pages",
+  "branch": "main",
+  "release": "unwitnessed-index-1",
   "protocol": "AZ1",
   "visual_reference_count": 10,
   "site_reference_video": "grok_video_2026-04-10-04-08-17(1).mp4",
+  "site_entry": "index.html",
+  "protected_source_hashes": "PROTECTED_HASHES.json",
+  "evidence_scope": "Local tests and screenshots; independent GitHub Actions receipt required after publishing",
   "files": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "size": 914,
+      "sha256": "f6f8ffbdb18ef0e2c8f41a770722cea919fe535c5c226bd2b2a8506dee8bc557"
+    },
     {
       "path": ".nojekyll",
       "size": 0,
@@ -26,9 +35,19 @@
       "sha256": "022b8deef2501340555fa8db32f6b27f89c5a2ba365bedf845a5be2aad44c8cd"
     },
     {
+      "path": "OBSERVATORY_DESIGN.md",
+      "size": 5419,
+      "sha256": "addc5f8fec6df150e98b49d5714388277d77213ab3a98c998ebd6d3469352985"
+    },
+    {
+      "path": "OBSERVATORY_VALIDATION.md",
+      "size": 5173,
+      "sha256": "a71bab018807b2956ad15ce68044028d53f8b79fccad9915d9788a1d7bf7b58f"
+    },
+    {
       "path": "OPERATIONAL_STATE.md",
-      "size": 10860,
-      "sha256": "e1ac566454795750f626bc97104eadeed787b1254c591968b44b30b9bd3da402"
+      "size": 14577,
+      "sha256": "23eaccad0f819ce0d184f91dc82ec615da0f0ff2210e9cd47b417c00f8394aab"
     },
     {
       "path": "PROTECTED_HASHES.json",
@@ -42,8 +61,8 @@
     },
     {
       "path": "README.md",
-      "size": 2417,
-      "sha256": "89198bf40a6c02b536f5c67c1b9518ccfa0e133fcad54bbe93417da68335046a"
+      "size": 4718,
+      "sha256": "bd3eb8af9b72475e95d19a4c8d8a60375cd7c84d01dc574d3a56b64c64d2a743"
     },
     {
       "path": "SOURCE_PROMPT.md",
@@ -91,9 +110,39 @@
       "sha256": "3a9cfd694de2f72cfdc504f5e86dfd7bb8ebed13789515fa9d0d7e87f9209e06"
     },
     {
+      "path": "development/build_observatory.py",
+      "size": 1137,
+      "sha256": "34e2a09b6bf578ac115798a934589855a25f2ad90a06c921ddd6948879181e69"
+    },
+    {
       "path": "development/build_uplift.py",
       "size": 8790,
       "sha256": "c514b8784077fd01bf02d6872daab8da378a8a349dd160f0d64fb48804c3826c"
+    },
+    {
+      "path": "development/coverage_probe.py",
+      "size": 1991,
+      "sha256": "8e61386512073f92080c6e7adf2054bf05957cebcc81e38e4a46cdfa00e198aa"
+    },
+    {
+      "path": "development/observatory.css",
+      "size": 17247,
+      "sha256": "fe044247f98ad64779b5ea2e6e8b1dc35e920ed1de3c18a75ee8521ad369be72"
+    },
+    {
+      "path": "development/observatory.js",
+      "size": 24981,
+      "sha256": "6b3aad331b730ee146a2bc36e7206df0cf516760149c39bdf23960df42956913"
+    },
+    {
+      "path": "development/observatory_template.html",
+      "size": 6046,
+      "sha256": "a8aab87ca27dce06f9db98586c93e5af53b88bd9c70ff6c1dc6efcf9c839b9ae"
+    },
+    {
+      "path": "development/preview_observatory.py",
+      "size": 1780,
+      "sha256": "28046d7e10585f142ef928d71324e4813fe72043974a5e5d4df38efc38545480"
     },
     {
       "path": "development/uplift.css",
@@ -107,13 +156,18 @@
     },
     {
       "path": "index.html",
-      "size": 6972,
-      "sha256": "06656c1fd64a43ecdf4c77a7de7bba9ba2e0567c2d530fe6d354a1a2c9f12a25"
+      "size": 176974,
+      "sha256": "084d7f6398eb69ecd1529630ba3e05ca4d634186ecc0da8fcedf148d5760f34c"
     },
     {
       "path": "test_azuravel.py",
       "size": 10582,
       "sha256": "7e527fbd664fb201750fec4eaa7e95a69745a9a1b8065711fd8c26a736927a49"
+    },
+    {
+      "path": "test_observatory.py",
+      "size": 10434,
+      "sha256": "b3456290961a3cdb1093d6065014c2498e321305f0cc7f80e19e24b91df3a5c5"
     },
     {
       "path": "test_uplift.py",

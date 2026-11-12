@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020509">
+<meta name="description" content="AZURAVEL: a forbidden observatory of reversible meaning. Explore a hundred lexical roots, six states, and the difference between absence and counteraction.">
+<title>AZURAVEL — The Unwitnessed Index</title>
+<style>__OBSERVATORY_CSS__</style>
+</head>
+<body>
+<main class="observatory" id="observatory" data-phase="threshold">
+  <div class="sky" aria-hidden="true">
+    <img class="sky-poster" src="./assets/ribbon-poster.jpg" alt="">
+    <video class="sky-video" id="ribbon-film" src="./assets/azuravel-ribbons.mp4" poster="./assets/ribbon-poster.jpg" muted loop autoplay playsinline preload="metadata" tabindex="-1"></video>
+    <canvas id="strata-canvas"></canvas>
+    <div class="sky-grain"></div><div class="sky-vignette"></div>
+    <div class="horizon-label horizon-top">INDEXED LIGHT / NON-SCANNABLE RIBBON</div>
+    <div class="horizon-label horizon-bottom" id="horizon-bottom">[ NO COORDINATES TRANSMITTED ]</div>
+  </div>
+  <header class="masthead">
+    <a class="sigil" href="./index.html" aria-label="AZURAVEL: return to threshold"><span class="sigil-mark" aria-hidden="true">∥∣∥</span><span class="sigil-name">AZURAVEL<small>THE UNWITNESSED INDEX</small></span></a>
+    <div class="masthead-status"><i class="status-light" aria-hidden="true"></i><span id="connection-status">UNSEALED / LOCAL RECONSTRUCTION</span></div>
+    <nav class="masthead-actions" aria-label="Observatory controls">
+      <button type="button" class="action-minimal" id="motion-toggle" aria-pressed="false" aria-label="Pause movement"><span id="motion-label" class="wide-label">PAUSE MOTION</span><span class="compact-label" aria-hidden="true">Ⅱ</span></button>
+      <button type="button" class="action-minimal" id="sound-toggle" aria-pressed="false" aria-label="Enable quiet ambient audio"><span id="sound-label" class="wide-label">SOUND OFF</span><span class="compact-label" aria-hidden="true">♪</span></button>
+      <a class="action-minimal laboratory-link" href="./AZURAVEL_ATLAS.html" aria-label="Open the complete language laboratory"><span class="wide-label">THE LAB ↗</span><span class="compact-label">LAB ↗</span></a>
+    </nav>
+  </header>
+  <section class="threshold" id="threshold" aria-labelledby="threshold-title">
+    <div class="threshold-copy"><p class="overline"><span class="dash"></span>THE FIRST OBSERVATION / AZ1</p>
+      <h1 id="threshold-title">You are<br>looking at<br><em>the wrong thing.</em></h1>
+      <p class="threshold-deck">The lines are not stars. They are the possible positions of a meaning. Some describe what happened. Others describe who caused it, what survived it—or the act of making it stop.</p>
+      <button id="enter-observatory" class="threshold-enter" type="button"><span>Cross the boundary</span><b aria-hidden="true">↗</b></button>
+      <div class="threshold-footnote">100 REGISTERED ROOTS &nbsp; / &nbsp; SIX STATES EACH &nbsp; / &nbsp; ONE RECOVERABLE IDENTITY</div>
+    </div>
+    <div class="threshold-vertical" aria-hidden="true">THE INSTRUMENT RECORDS QUESTIONS, NOT PEOPLE / AZURAVEL</div>
+  </section>
+  <section class="field" id="field" aria-label="Interactive lexical observatory" hidden>
+    <div class="scene-context" aria-hidden="true"><span id="scene-designation">THE OUTER INDEX</span><b id="scene-number">001 / 600</b></div>
+    <div class="field-object" id="field-object" aria-hidden="true"><div class="large-word" id="large-word"></div><div class="large-syllables" id="large-syllables"></div><div class="large-subtitle" id="large-subtitle"></div></div>
+    <div class="field-nodes" id="field-nodes" role="group" aria-label="Select a domain, word, or grammatical state"></div>
+    <div class="differential" id="differential" hidden>
+      <div class="diff-lane"><span class="diff-code" id="absence-form">sa miroke</span><span class="diff-title">Nothing occurs.</span><span class="diff-sub">NEGATION / sa + event</span></div>
+      <div class="diff-divider" aria-hidden="true">≠</div>
+      <div class="diff-lane"><span class="diff-code" id="counter-form">romike</span><span class="diff-title">Something undoes it.</span><span class="diff-sub">ACTIVE COUNTER-EVENT / CTR</span></div>
+    </div>
+    <nav class="strata-rail" aria-label="Observatory navigation">
+      <button type="button" data-route="sectors" id="rail-index" aria-label="Return to the outer index">01 <span>THE INDEX</span></button>
+      <button type="button" data-route="records" id="rail-records" aria-label="Open speculative case files">02 <span>CASE FILES</span></button>
+      <button type="button" data-route="differential" id="rail-contrast" aria-label="Compare negation and counter-event">03 <span>THE DIFFERENCE</span></button>
+    </nav>
+    <aside class="reader" id="reader" aria-label="Current evidence and controls">
+      <div class="reader-top"><span id="reader-index">RECORD / 000</span><span id="reader-kind">AZ1 / REGISTER</span></div>
+      <h2 id="reader-title">The Index</h2>
+      <div class="reader-transcript" id="reader-transcript" tabindex="0" aria-label="Record text; scroll for more details"><p class="reader-lead" id="reader-lead"></p>
+      <p class="reader-sub" id="reader-sub"></p></div>
+      <p class="reader-source" id="reader-source"></p>
+      <div class="reader-actions" id="reader-actions"></div>
+    </aside>
+    <div class="field-footer" aria-label="Observatory metadata"><span id="field-coordinate">[ 000 / OUTER REGISTER ]</span><span id="discovery-count">0 OBSERVATIONS</span><span class="field-footer-note">INTERPRETIVE RECORDS ≠ CANONICAL LANGUAGE DATA</span></div>
+  </section>
+  <div class="screenreader-only" id="event-announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script id="az-data" type="application/json">__AZURAVEL_JSON__</script>
+  <script>__OBSERVATORY_JS__</script>
+</main>
+</body>
+</html>
