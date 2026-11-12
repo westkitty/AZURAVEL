@@ -1,0 +1,14 @@
+test_authorial_source_anchored (test_starsilk_bridge.CaseArchive.test_authorial_source_anchored) ... ok
+test_four_cases_and_bilateral_lens (test_starsilk_bridge.CaseArchive.test_four_cases_and_bilateral_lens) ... ok
+test_lexical_analogy_and_return (test_starsilk_bridge.CaseArchive.test_lexical_analogy_and_return) ... ok
+test_mobile_reader_and_coverage (test_starsilk_bridge.CaseArchive.test_mobile_reader_and_coverage) ... ok
+test_source_and_language_distinct (test_starsilk_bridge.CaseArchive.test_source_and_language_distinct) ... ok
+test_source_metadata_does_not_become_fake_signal (test_starsilk_bridge.CaseArchive.test_source_metadata_does_not_become_fake_signal) ... ok
+test_speculative_case_files_unaltered (test_starsilk_bridge.CaseArchive.test_speculative_case_files_unaltered) ... ok
+test_threshold_entry_and_reading (test_starsilk_bridge.CaseArchive.test_threshold_entry_and_reading) ... ok
+test_witness_deep_link (test_starsilk_bridge.CaseArchive.test_witness_deep_link) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.897s
+
+OK

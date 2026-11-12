@@ -1,0 +1,15 @@
+test_all_three_readings_and_intimate_end (test_ledger.LedgerJourney.test_all_three_readings_and_intimate_end) ... ok
+test_deep_link_to_final_reading (test_ledger.LedgerJourney.test_deep_link_to_final_reading) ... ok
+test_four_readings_unlock_and_reclassification (test_ledger.LedgerJourney.test_four_readings_unlock_and_reclassification) ... ok
+test_keyboard_access_to_all_three_stages (test_ledger.LedgerJourney.test_keyboard_access_to_all_three_stages) ... ok
+test_ledger_is_not_claimed_prematurely (test_ledger.LedgerJourney.test_ledger_is_not_claimed_prematurely) ... ok
+test_malformed_saved_progress_does_not_break_entry (test_ledger.LedgerJourney.test_malformed_saved_progress_does_not_break_entry) ... ok
+test_origins_stay_separate (test_ledger.LedgerJourney.test_origins_stay_separate) ... ok
+test_short_phone_keeps_text_and_controls_operable (test_ledger.LedgerJourney.test_short_phone_keeps_text_and_controls_operable) ... ok
+test_source_language_boundary_is_visible_at_climax (test_ledger.LedgerJourney.test_source_language_boundary_is_visible_at_climax) ... ok
+test_three_stages_under_40_percent (test_ledger.LedgerJourney.test_three_stages_under_40_percent) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.677s
+
+OK

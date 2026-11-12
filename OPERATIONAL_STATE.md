@@ -7,12 +7,12 @@
   "project_name": "AZURAVEL Language Laboratory and Unwitnessed Index",
   "project_root": ".",
   "artifact_path": "index.html",
-  "state_revision": 6,
-  "last_updated": "2026-11-12T20:01:00Z",
+  "state_revision": 7,
+  "last_updated": "2026-11-12T22:58:00Z",
   "current_baseline": {
-    "identity": "AZURAVEL Unwitnessed Index with four Starsilk testimony lenses; protected Laboratory AZ1",
+    "identity": "AZURAVEL Unwitnessed Index with source-bound Unclosed Ledger coda; protected Laboratory AZ1",
     "state": "partially-verified",
-    "last_verified": "2026-11-12T20:01:00Z"
+    "last_verified": "2026-11-12T22:58:00Z"
   },
   "scope_boundaries": [
     "AZ1 language rules, six-state transformations, structured dictionary, original standalone atlas, immersive observatory, Code128-B outputs, local tests and visual identity"
@@ -36,8 +36,8 @@
 - **Local baseline:** Unwitnessed Index (`index.html`), generated from `development/observatory_template.html`, CSS/JS, authoritative `AZURAVEL_DATA.json`, and separate `sources/starsilk_testimony.json`. The latter is authored interpretation, not AZ1 grammar authority.
 - **Protected utility:** Original 1.1 `AZURAVEL_ATLAS.html` remains byte-identical; original 80 tests and added 31 lab tests preserved.
 - **Source identity:** Current `index.html` is deterministically rebuilt from its visible source files. Prior Rev 4 deployed baseline SHA-256 was `084d7f6398eb69ecd1529630ba3e05ca4d634186ecc0da8fcedf148d5760f34c`. No actual remote fictional signal is claimed.
-- **Last local checks:** 2026-11-12, 140 automated tests plus 102 phase/viewport UI measurements, deterministic rebuild and screenshots. Earlier 131/42 figures are preserved as prior-revision evidence, not the current test ceiling.
-- **Repository delivery:** Source-bridge code commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b` was pushed on `main` and verified by GitHub Pages Actions run `43295585705` (`success` with all deployment steps passed). Any subsequent documentation-only push must be checked against its own new SHA.
+- **Last local checks:** 2026-11-12, 150 tests passed across five isolated suites, 102 prior geometry checks plus 15 new coda checks, deterministic rebuild, and 12 new screenshots. A monolithic run stalled in the sandbox; its result is not represented as PASS. Earlier 131/42 figures are preserved as prior-revision evidence, not the current test ceiling.
+- **Repository delivery:** Previous remote head `a6b0ebc63463acbefd879622e88c05507085e946` and its Pages deployment are the historical published baseline. The new coda exists only in a local handoff artifact; no commit/push/Pages update was authorized in this new work unit.
 - **Quality state:** `partially-verified`; local browser behavior tested, external device/HTTP and audience response not verified.
 
 ## 3. Artifact Contract
@@ -75,10 +75,11 @@
 - **VER-008:** The source-bound Starsilk lens passed 9 new automated tests; combined current suite 140/140, `evidence/full_suite.log` after final test run.
 - **VER-009:** Chrome coverage below 40% for 102 measured scene/viewport observations; no horizontal overflow, `evidence/coverage_starsilk.log`.
 - **VER-010:** Source narrative SHA-256 and all four excerpts checked against uploaded `Codec's Radicalization Journey.txt` during authorship; file is not publicized verbatim.
+- **VER-011 (local):** Three-stage Unclosed Ledger, deep linking, keyboard navigation and source boundary PASS nine isolated browser tests; browser corruption repaired with before/after repro, 12 responsive states pass under 40%. See `OMNI_QQQ_AWE_REPORT.md`.
 
 ## 6. Known Not Working
 
-No confirmed unresolved defects in the tested local paths after the narrow-screen occupancy repair. This does **not** establish other devices, browsers or subjective emotional quality.
+No confirmed unresolved defects in the tested local paths after the narrow-screen occupancy repair and malformed-progress startup fix. This does **not** establish other devices, browsers or subjective emotional quality.
 
 ## 7. Implemented but Unverified
 
@@ -126,9 +127,9 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 
 ## 12. Current Change Scope and Impact Radius
 
-- **Allowed change:** New observatory `index.html`, its deterministic build sources, regression/coverage tests, docs/manifests, release evidence and authorized `main` publication.
+- **Allowed change:** Local Unclosed Ledger coda, its deterministic build sources, saved-progress repair, browser tests, documentation and handoff package. Remote stage/commit/push remains outside this task’s explicit authority.
 - **Preserved:** The source dictionary, spec, Python interpreter, original standalone lab, barcode behavior and pre-existing tests; GitHub Pages workflow and user-supplied video stay unchanged.
-- **Mandatory validation:** 131 test suite, 42 measured responsive states, protocol hashes, smoke of 6 selected story routes, browser visual screenshots, GitHub source and Actions verification.
+- **Mandatory validation:** Current five isolated suites (150 tests), 102 previous + 15 new geometry observations, protected protocol hashes, first-read/synthesized/cup journeys, and browser screenshots. GitHub source/Actions remain historical until any future publication.
 - **QA limits:** native user-browser, physical scanners, real screen readers and emotion studies unverified.
 - **Rollback:** GitHub source history retains prior landing revision; move site to earlier known working commit only after user-authorized separate rollback action. Do not force push.
 
@@ -185,3 +186,11 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 - **Verified Pages:** Actions run `43295585705` completed `success` for exactly source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b`, including site upload/deploy steps. Published route is `https://westkitty.github.io/AZURAVEL/`.
 - **Preserved limitations:** Independent public HTTP fetch could not be completed through the current environment; no native mobile/physical scanner accessibility or user-awe outcome is certified.
 - **Closure notes:** Any documentation-only follow-up on `main` is a new delivery SHA and requires its own Pages success readback. The source code and protocol do not need rebuilding or revision for this state update.
+
+### Revision 7 — 2026-11-12
+
+- Added **The Unclosed Ledger** as three source-bound readings within the existing observatory: administrative classification, unexcluded consequence, intimate shelter cup. Enter after all four cost records or via deliberate deep link. The comparisons do not assert a fifth event, casualty totals, physical coordinates, or a common real chronology.
+- Confirmed and repaired malformed saved-progress arrays: prior Chromium initialization failed with `object is not iterable`; repaired loader ignores invalid stored shapes and preserves valid progress. Before/after evidence in `evidence/omni/`.
+- **Local proof:** original 80 + 31 + 20 + 9 tests and new 10 = **150 isolated-suite PASS**. Full single-process run stalled in this sandbox; it is not reported as PASS. Original 102 and 15 new viewport/scene observations kept UI below 40% with zero horizontal overflow. Deterministic build and original protected hashes PASS.
+- **Remote delivery:** Upstream `main` observed at `a6b0ebc63463acbefd879622e88c05507085e946`, matching the source ZIP’s original `index.html` Git blob. No remote mutation or Pages update for this coda.
+- Remaining unknowns: physical touch and reader behavior, mobile Safari/Firefox, full local `file://` storage, long-session power use, real-world emotional effect.

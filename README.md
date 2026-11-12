@@ -58,3 +58,11 @@ Read `STARSILK_SOURCE_BOUNDARY.md` for provenance and exclusions. The original
 AZ1 atlas, language data, scanner, and five clearly speculative AZURAVEL
 records remain intact. All stars/planets/rings in the new lens are schematic
 and deliberately not to scale.
+
+## The Unclosed Ledger
+
+A source-bound, three-reading coda is available after the viewer examines the **cost** interpretation of all four Starsilk testimony records. Its large-field marks are explicitly editorial comparisons, **not** casualty totals, maps, chronological links, or shared AZ1/Starsilk technology. The sequence moves from operational outcomes, through the consequences omitted by those descriptions, to the small heater-lit cup in Codec's testimony. The cup is not another Blood Ring.
+
+The coda uses the same keyboard-accessible reader and spatial controls, remains within the established visible-interface budget, and has a direct-link route (`#ledger=0`, `#ledger=1`, `#ledger=2`) for source review. Deep links can open a reading directly; normal navigation invites the viewer to investigate all four costs first. The complete AZ1 laboratory remains independently accessible.
+
+The repository's original grammar, 100 roots, 600 lexical forms, Code 128 serialization and scanner constraints, source video, and four user-authorial testimony records are unchanged by this coda.

@@ -73,3 +73,7 @@ its **exact** new commit SHA before calling the update delivered.
 The four visual source records are intentionally representational, not
 truth-claiming maps. Interpretive decisions are in `sources/starsilk_testimony.json`;
 not in `AZURAVEL_DATA.json` or the Starsilk Museum's authority files.
+
+## The unclosed comparison
+
+The final three-stage ledger is an editorial juxtaposition of the **same four bounded testimony summaries**, not a fifth historical incident. The phrase “It worked” reports tactical outcomes in the scene, not moral acquittal. No additional characters, casualties, coordinates, macro types, planets, or chronological links were inferred to create this interaction. Its final red ellipse is the shelter heater's reflection on Codec's cup; it must never be presented as a new Blood Ring or recurring cosmological phenomenon. The direct-link route bypasses staged discovery for review convenience and does not certify a complete prior reading.

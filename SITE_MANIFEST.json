@@ -1,13 +1,13 @@
 {
   "identity": "westkitty/AZURAVEL",
   "branch": "main",
-  "release": "unwitnessed-index-starsilk-sourcepass-1",
+  "release": "unclosed-ledger-local-review-1",
   "protocol": "AZ1",
   "visual_reference_count": 10,
   "site_reference_video": "grok_video_2026-04-10-04-08-17(1).mp4",
   "site_entry": "index.html",
   "protected_source_hashes": "PROTECTED_HASHES.json",
-  "evidence_scope": "140 unit/browser tests, 102 viewport/state observations under 40 percent; source commit 949a2b0 Pages Actions run 43295585705 successful; independent public smoke unverified",
+  "evidence_scope": "150 isolated-suite tests PASS, 102 prior + 15 new geometric observations; unclosed ledger local artifact, no new GitHub commit or Pages deploy",
   "files": [
     {
       "path": ".github/workflows/pages.yml",
@@ -35,9 +35,14 @@
       "sha256": "022b8deef2501340555fa8db32f6b27f89c5a2ba365bedf845a5be2aad44c8cd"
     },
     {
+      "path": "AZURAVEL_bible.md",
+      "size": 3447,
+      "sha256": "7c388eed3c0bc3a70959ceeb947fc65dcd9fd706e391bc2ab60f6b440dd330d3"
+    },
+    {
       "path": "OBSERVATORY_DESIGN.md",
-      "size": 6872,
-      "sha256": "5c601c7b1d851d22060ec8123e96bab8cbec32fb24149d25b0e9032e2f8c9ba9"
+      "size": 8697,
+      "sha256": "5ffdee4b83328bb770a66552baa1fb25a2b5e66c4586cc63faac974f8b59a924"
     },
     {
       "path": "OBSERVATORY_VALIDATION.md",
@@ -45,9 +50,14 @@
       "sha256": "92d9fca059a4de69bc3ded936e484b6c34d8d98a30a32f3b5b5d5dd86d2183d2"
     },
     {
+      "path": "OMNI_QQQ_AWE_REPORT.md",
+      "size": 5128,
+      "sha256": "acca6464b89f26e9a06571b4d7db1db99780bc925bf3e710873e673ccb6f9204"
+    },
+    {
       "path": "OPERATIONAL_STATE.md",
-      "size": 18826,
-      "sha256": "4ee8a4c102d1d98fbbb3fc4d36e6f8829a29e7a5ba05145ebcf767aa7f351e93"
+      "size": 20678,
+      "sha256": "634a8bec0054c5d83db00fa911c9631679bc53a8d6e611a7fd17c2f4553b16fe"
     },
     {
       "path": "PROTECTED_HASHES.json",
@@ -61,8 +71,8 @@
     },
     {
       "path": "README.md",
-      "size": 5634,
-      "sha256": "b79c90e84c6dc4aeedb522c6881ecca21e5f2dbf8ec9902fc21ad044fc4c7f2b"
+      "size": 6726,
+      "sha256": "07fe797b37d1c380da02a171913ee9c78feb4d5c3dad44567f071c101cc3ec37"
     },
     {
       "path": "SOURCE_PROMPT.md",
@@ -71,8 +81,8 @@
     },
     {
       "path": "STARSILK_SOURCE_BOUNDARY.md",
-      "size": 5154,
-      "sha256": "39c364ef3da37dcc5bc5622528e95a507d0463c3b32e7d87044bc9816b093a6c"
+      "size": 5827,
+      "sha256": "4a1d116eb242215fa5a49ebe09eaf129a6163c32ae7ff8f1cec2b981f6a1f88d"
     },
     {
       "path": "UPLIFT_REQUEST.md",
@@ -120,6 +130,11 @@
       "sha256": "66e2076100e1983690a2560e3db04c84d3b058c4de21f63961fa7ab6e840641e"
     },
     {
+      "path": "development/build_release_ledger.py",
+      "size": 2843,
+      "sha256": "614f6c3d3421492a0701a00ff9db8270b5ae1821bbc551f4622b33c3aed1b42e"
+    },
+    {
       "path": "development/build_uplift.py",
       "size": 8790,
       "sha256": "c514b8784077fd01bf02d6872daab8da378a8a349dd160f0d64fb48804c3826c"
@@ -131,18 +146,23 @@
     },
     {
       "path": "development/observatory.css",
-      "size": 19471,
-      "sha256": "b04f18f4c6ed42d4b37f997d0212a487ac71ea28f297ddb2c805efa5c8c9d979"
+      "size": 21487,
+      "sha256": "6c11e597419bd238e2a9376fa787723593dd84c8a1a879fda600561eff9bb3bb"
     },
     {
       "path": "development/observatory.js",
-      "size": 30965,
-      "sha256": "8c56b568762dadb1feb3a58dec79eb0fc57894d05a9197444ef7537fc2b58994"
+      "size": 37535,
+      "sha256": "a139f16f21beb1da8f9b21a3adb6e14f6b7b79cacff2d88086732abc09807e41"
     },
     {
       "path": "development/observatory_template.html",
       "size": 6438,
       "sha256": "764eb4bde6a4e0b013ce98c6fa70f59035b9da532bf9e5ac4168d93dfd728a36"
+    },
+    {
+      "path": "development/preview_ledger.py",
+      "size": 992,
+      "sha256": "47bee4d249a705867b96f0d1f4ac08090873bfae798f253062337c6644d2bdcc"
     },
     {
       "path": "development/preview_observatory.py",
@@ -166,8 +186,8 @@
     },
     {
       "path": "index.html",
-      "size": 191005,
-      "sha256": "c0259444b971c96d2fcecb6ab1cf0349410ceffeadf95feb947476d0ae2c9c19"
+      "size": 199591,
+      "sha256": "6abed993988b376a4103061dd0a6dc15547ca4fb6805005ccce944b336964bad"
     },
     {
       "path": "sources/starsilk_testimony.json",
@@ -178,6 +198,11 @@
       "path": "test_azuravel.py",
       "size": 10582,
       "sha256": "7e527fbd664fb201750fec4eaa7e95a69745a9a1b8065711fd8c26a736927a49"
+    },
+    {
+      "path": "test_ledger.py",
+      "size": 7815,
+      "sha256": "aa7a4882b15307095988c7a56128d28a16d624410dc19c420962f1b32c9bf379"
     },
     {
       "path": "test_observatory.py",

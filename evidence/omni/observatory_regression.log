@@ -1,0 +1,25 @@
+test_all_six_forms_accessible_through_real_controls (test_observatory.ObservatoryTest.test_all_six_forms_accessible_through_real_controls) ... ok
+test_all_ten_sectors_expose_ten_real_roots (test_observatory.ObservatoryTest.test_all_ten_sectors_expose_ten_real_roots) ... ok
+test_all_twenty_authoritative_examples_parse (test_observatory.ObservatoryTest.test_all_twenty_authoritative_examples_parse) ... ok
+test_case_file_unlock_is_ordered_not_fake (test_observatory.ObservatoryTest.test_case_file_unlock_is_ordered_not_fake) ... ok
+test_contrast_is_per_root_not_fake_literal (test_observatory.ObservatoryTest.test_contrast_is_per_root_not_fake_literal) ... ok
+test_controls_have_accessible_names (test_observatory.ObservatoryTest.test_controls_have_accessible_names) ... ok
+test_counteraction_not_negation (test_observatory.ObservatoryTest.test_counteraction_not_negation) ... ok
+test_deterministic_file_entry (test_observatory.ObservatoryTest.test_deterministic_file_entry) ... ok
+test_escape_navigation (test_observatory.ObservatoryTest.test_escape_navigation) ... ok
+test_exact_normative_data_embedded (test_observatory.ObservatoryTest.test_exact_normative_data_embedded) ... ok
+test_immutable_language_contract (test_observatory.ObservatoryTest.test_immutable_language_contract) ... ok
+test_lab_handoff_matches_exact_route (test_observatory.ObservatoryTest.test_lab_handoff_matches_exact_route) ... ok
+test_mobile_desktop_navigation_and_chrome_coverage (test_observatory.ObservatoryTest.test_mobile_desktop_navigation_and_chrome_coverage) ... ok
+test_no_default_audio (test_observatory.ObservatoryTest.test_no_default_audio) ... ok
+test_no_runtime_dependency_or_tracking (test_observatory.ObservatoryTest.test_no_runtime_dependency_or_tracking) ... ok
+test_reader_transcript_single_scroll_surface (test_observatory.ObservatoryTest.test_reader_transcript_single_scroll_surface) ... ok
+test_records_explicitly_not_canonical (test_observatory.ObservatoryTest.test_records_explicitly_not_canonical) ... ok
+test_reduced_motion_has_static_fallback (test_observatory.ObservatoryTest.test_reduced_motion_has_static_fallback) ... ok
+test_source_preservation (test_observatory.ObservatoryTest.test_source_preservation) ... ok
+test_threshold_significance_and_entry (test_observatory.ObservatoryTest.test_threshold_significance_and_entry) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 10.604s
+
+OK

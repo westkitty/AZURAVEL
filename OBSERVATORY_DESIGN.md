@@ -65,3 +65,15 @@ weapon or relationship was invented.
 The broader Starsilk Museum runs as a separate repository with its own
 deterministic publication and machine-authority laws. We do not edit it,
 assume a shared entity-ID space, or turn its observed mentions into causality.
+
+## The Unclosed Ledger — interpretive coda
+
+After examining the cost side of all four source-bound Starsilk accounts, the visitor can assemble a three-stage visual comparison. The content stays subordinate to the documented source boundaries in `STARSILK_SOURCE_BOUNDARY.md`.
+
+1. **THE FILE:** four separately reported operational outcomes, each potentially legible as a success. Their arrangement does **not** imply one physical site, causal chain, or shared date.
+2. **THE COST:** the same four readings expose the destroyed material, inhabited suns, damaged remnant world, and Codec's agency. All marks are schematic, not counted victims or geolocated systems.
+3. **THE CUP:** the comparative marks vanish; a single heater reflection on a dented cup carries the surviving authored line, “I became necessary. That is not the same thing.” This is *not* another Blood Ring, an AZ1 inscription, or a technological equivalence between worlds.
+
+Interactive state lives in the existing observatory renderer (`ledger` phase); no second clock or new external dependency is created. Users can select any of the three stages by accessible buttons, travel forward through the existing reader, and return with Escape. Normal entry is unlocked by reading the four costs. Deep links intentionally permit source review without local storage as a security or accessibility concession. Audio remains opt-in, reduced motion stays static, and the original video is lowered during the final intimate frame to create negative space. The reader remains scrollable and under the 40% UI budget.
+
+This is a falsifiable *design hypothesis* for awe: moving from a success-only frame to its material consequences and then to one ordinary object should change how a visitor interprets the earlier scale. Audience reaction has not been measured.
