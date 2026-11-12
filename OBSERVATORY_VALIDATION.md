@@ -64,3 +64,10 @@ Five fictional witness records are interpretive exercises, not accepted AZURAVEL
 - `file://` behavior, real hardware, physical scanner, and audience emotional
   outcomes remain unverified. GitHub Pages delivery requires a same-SHA
   successful deployment after staging and pushing.
+
+## Source-bridge GitHub delivery verification (2026-11-12)
+
+- GitHub `main` was read back at source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b`. Exactly 16 bounded paths were committed as a non-force fast-forward; all uploaded blobs matched their local Git SHA-1 hashes.
+- GitHub Pages Actions run `43295585705` completed `success` for that exact commit, with checkout, entry-point verification, upload, and deployment steps all passing.
+- This is provider-side deployment proof, **not** an independent public HTTP browser smoke test. No physical device, assistive-technology validation, or viewer emotion is claimed.
+- A later documentation-only push must have its own current-commit Pages readback.

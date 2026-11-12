@@ -7,12 +7,12 @@
   "project_name": "AZURAVEL Language Laboratory and Unwitnessed Index",
   "project_root": ".",
   "artifact_path": "index.html",
-  "state_revision": 5,
-  "last_updated": "2026-11-12T19:51:49Z",
+  "state_revision": 6,
+  "last_updated": "2026-11-12T20:01:00Z",
   "current_baseline": {
     "identity": "AZURAVEL Unwitnessed Index with four Starsilk testimony lenses; protected Laboratory AZ1",
     "state": "partially-verified",
-    "last_verified": "2026-11-12T19:51:49Z"
+    "last_verified": "2026-11-12T20:01:00Z"
   },
   "scope_boundaries": [
     "AZ1 language rules, six-state transformations, structured dictionary, original standalone atlas, immersive observatory, Code128-B outputs, local tests and visual identity"
@@ -37,7 +37,7 @@
 - **Protected utility:** Original 1.1 `AZURAVEL_ATLAS.html` remains byte-identical; original 80 tests and added 31 lab tests preserved.
 - **Source identity:** Current `index.html` is deterministically rebuilt from its visible source files. Prior Rev 4 deployed baseline SHA-256 was `084d7f6398eb69ecd1529630ba3e05ca4d634186ecc0da8fcedf148d5760f34c`. No actual remote fictional signal is claimed.
 - **Last local checks:** 2026-11-12, 140 automated tests plus 102 phase/viewport UI measurements, deterministic rebuild and screenshots. Earlier 131/42 figures are preserved as prior-revision evidence, not the current test ceiling.
-- **Repository delivery:** Previous deployment at `34eabf18ccafc9b82f7539128ee45d697da7971a` was verified by GitHub Pages Actions. This source-bridge revision has not yet been published at time of local state write; verify exact new SHA after push.
+- **Repository delivery:** Source-bridge code commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b` was pushed on `main` and verified by GitHub Pages Actions run `43295585705` (`success` with all deployment steps passed). Any subsequent documentation-only push must be checked against its own new SHA.
 - **Quality state:** `partially-verified`; local browser behavior tested, external device/HTTP and audience response not verified.
 
 ## 3. Artifact Contract
@@ -95,7 +95,7 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 
 ## 9. Pending Work
 
-- **PND-001:** After publishing an observatory change, verify GitHub `main`, the Pages workflow `success` for that exact SHA, and note the public URL. Avoid treating a queued job as deployment.
+- **PND-001 (verified for 949a2b0):** GitHub `main` and the Pages workflow `success` match source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b`; Actions run `43295585705` concluded successfully. Repeat the check after each later push.
 - **PND-002:** Optional real-device session covering mobile touch, file-origin persistence, Safari/Firefox, reduced-motion and screen-reader behavior.
 - **PND-003:** Optional user study: does revealing counteraction after apparent absence actually change interpretation? This is an emotional hypothesis, not a measured result.
 
@@ -119,7 +119,7 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 | VER-004 | <40% UI coverage in measured states | verified with geometric metric | `evidence/coverage_probe.log` | Any layout/responsive change |
 | VER-005 | Chromium rendered screenshots / no JS errors | verified for screenshots | `evidence/threshold_1440.png`, `preview.log` | Any frontend change |
 | UNV-001..004 | Device/live-fetch/emotional response | unverified | not available in local runtime | Available physical target or audience |
-| PND-001 | Current Pages revision delivery | pending at local source build | GitHub main head + Actions run after publish | Any push to main |
+| PND-001 | Starsilk source-bridge Pages delivery | verified for source commit 949a2b0 | GitHub `main` readback and completed Actions run `43295585705` | Any push to main |
 | VER-008 | 140 tests including 9 source-bridge checks | verified locally | `evidence/full_suite.log`, `test_starsilk_bridge.py` | Source/template/JS change |
 | VER-009 | 102 viewport/scene observations below 40% | verified locally | `evidence/coverage_starsilk.log` | CSS/readers/navigation change |
 | INV-010..011 | Starsilk separated from AZ1 and Museum authority | tested source boundary | `STARSILK_SOURCE_BOUNDARY.md`, test metadata checks | Any source edit |
@@ -178,3 +178,10 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
   measurements <40%, static reduced-motion rendering and responsive screenshots.
 - Pending: exact new GitHub Pages commit/deployment and independent external
   URL test. Real devices, physical scanners and audience impact remain unverified.
+
+### Revision 6 - 2026-11-12
+
+- **Verified Git publication:** `westkitty/AZURAVEL` `main` advanced from `34eabf18ccafc9b82f7539128ee45d697da7971a` to source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b` with exactly 16 changed source/record paths, each blob Git hash independently checked before commit. Force push was not used.
+- **Verified Pages:** Actions run `43295585705` completed `success` for exactly source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b`, including site upload/deploy steps. Published route is `https://westkitty.github.io/AZURAVEL/`.
+- **Preserved limitations:** Independent public HTTP fetch could not be completed through the current environment; no native mobile/physical scanner accessibility or user-awe outcome is certified.
+- **Closure notes:** Any documentation-only follow-up on `main` is a new delivery SHA and requires its own Pages success readback. The source code and protocol do not need rebuilding or revision for this state update.

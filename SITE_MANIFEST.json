@@ -7,7 +7,7 @@
   "site_reference_video": "grok_video_2026-04-10-04-08-17(1).mp4",
   "site_entry": "index.html",
   "protected_source_hashes": "PROTECTED_HASHES.json",
-  "evidence_scope": "140 unit/browser checks locally, 102 viewport-state observations below 40 percent; remote SHA and Pages release must be independently verified",
+  "evidence_scope": "140 unit/browser tests, 102 viewport/state observations under 40 percent; source commit 949a2b0 Pages Actions run 43295585705 successful; independent public smoke unverified",
   "files": [
     {
       "path": ".github/workflows/pages.yml",
@@ -41,13 +41,13 @@
     },
     {
       "path": "OBSERVATORY_VALIDATION.md",
-      "size": 6616,
-      "sha256": "121dd52ccc9fb6ccaa5663d7ae9e728eb2111aa2fa36ead5c846e85f0f7fdb4d"
+      "size": 7324,
+      "sha256": "92d9fca059a4de69bc3ded936e484b6c34d8d98a30a32f3b5b5d5dd86d2183d2"
     },
     {
       "path": "OPERATIONAL_STATE.md",
-      "size": 17721,
-      "sha256": "44f5a9341c8670abb23478503063c434a1fbcdb456ef10ebe408659858870b0d"
+      "size": 18826,
+      "sha256": "4ee8a4c102d1d98fbbb3fc4d36e6f8829a29e7a5ba05145ebcf767aa7f351e93"
     },
     {
       "path": "PROTECTED_HASHES.json",
