@@ -7,8 +7,8 @@
   "project_name": "AZURAVEL Language Laboratory",
   "project_root": ".",
   "artifact_path": "AZURAVEL_ATLAS.html",
-  "state_revision": 2,
-  "last_updated": "2026-11-12T18:45:00Z",
+  "state_revision": 3,
+  "last_updated": "2026-11-12T18:31:00Z",
   "current_baseline": {
     "identity": "AZURAVEL Laboratory 1.1 offline HTML + governed AZ1 spec",
     "state": "partially-verified",
@@ -38,7 +38,7 @@
 - **Baseline state:** `partially-verified`: local headless browser workflows verified; destination-device file-origin behavior unknown.
 - **Governing protocol:** AZ1, unchanged from 1.0.
 - **Source/build identity:** `development/build_uplift.py` assembles the original base, added CSS/JS, and authoritative JSON.
-- **Delivery state:** source-target `westkitty/AZURAVEL`, default branch `main`; GitHub Pages publication must be verified separately against the deployed commit.
+- **Delivery state:** GitHub `main` and Pages workflow verified. GitHub deployment run `43280239199` reports SUCCESS for `c565b14a33a56e7a029694cbe3a2a9b71cdf386e` with environment URL `https://westkitty.github.io/AZURAVEL/`; independent public HTTP browser fetch was blocked in the execution environment and remains UNVERIFIED.
 - **Last local checks:** 2026-11-12: 111 automated tests, SVG optical scans, six viewports.
 
 ## 3. Artifact Contract
@@ -132,3 +132,10 @@ No confirmed unresolved defect is evidenced in the tested local paths. This does
 - User supplied canonical repository URL `https://github.com/westkitty/AZURAVEL` and ten visual-reference videos. Repository API confirmed `westkitty/AZURAVEL` is empty, public, main default, writable by connected `westkitty` account before staging.
 - The motion identity is a glowing azure segmented ribbon on near-black. `VISUAL_IDENTITY.md` records exact style and source video hashes. `index.html` is an optional Pages entrance; the immutable standalone lab remains available at `AZURAVEL_ATLAS.html`.
 - Pages enabling, deployment revision, source commit, and live smoke check remain pending until remote readback. No Git or Pages success was presumed here.
+
+### Revision 3 — 2026-11-12
+
+- **VER-007 (verified remotely):** GitHub API returned `main` at `c565b14a33a56e7a029694cbe3a2a9b71cdf386e`; file `index.html` and `.github/workflows/pages.yml` read back from the repository. GitHub Actions workflow run `43280239199` finished `success`, all job steps passed, and the Pages deploy action reported success. Pages deployment metadata names `https://westkitty.github.io/AZURAVEL/` and confirms the deployed commit.
+- **UNV-003:** The external browser/web fetch of the published URL was blocked by the environment; do not treat CI success as independent HTTP smoke proof. User-device/video-autoplay behavior remains untested.
+- **DEC-003:** `westkitty/AZURAVEL` is now the project Git remote of record. Main-branch deployment is governed by `.github/workflows/pages.yml`; use the repository specification and visual identity contract on all future edits.
+- **Pending:** Independent public URL smoke test in a network-capable browser and any cross-device scanner trials.
