@@ -40,6 +40,7 @@ The first build deterministically embeds the unchanged JSON data into `index.htm
 - `SITE_MANIFEST.json` records file hashes at packaging time. It is not a CI or deployment receipt.
 - `OPERATIONAL_STATE.md` records protected capability and known verification limitations.
 - `westkitty/AZURAVEL`, `main`, publishes through `.github/workflows/pages.yml` to GitHub Pages. Check the Actions deployment for the precise published revision rather than assuming every local source edit was delivered.
+- **Unclosed Ledger source release:** `9cd3ae6960d60f5831f6b62eea95dae68470e6fd`; [successful Pages run #43329625583](https://github.com/westkitty/AZURAVEL/actions/runs/43329625583). The public site is https://westkitty.github.io/AZURAVEL/. A later docs-only follow-up may carry a newer `main` SHA.
 
 The observatory is an interpretation of the language, not an external authority on its fictional universe. AZ1 remains the source of truth; real Code 128 exports still require black bars on white, the specified checksum and quiet zones. No new lexical root, arbitrary English translation, or fabricated barcode capability is introduced.
 

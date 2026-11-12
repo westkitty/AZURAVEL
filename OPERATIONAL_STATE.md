@@ -7,12 +7,12 @@
   "project_name": "AZURAVEL Language Laboratory and Unwitnessed Index",
   "project_root": ".",
   "artifact_path": "index.html",
-  "state_revision": 7,
-  "last_updated": "2026-11-12T22:58:00Z",
+  "state_revision": 8,
+  "last_updated": "2026-11-12T23:34:51Z",
   "current_baseline": {
     "identity": "AZURAVEL Unwitnessed Index with source-bound Unclosed Ledger coda; protected Laboratory AZ1",
     "state": "partially-verified",
-    "last_verified": "2026-11-12T22:58:00Z"
+    "last_verified": "2026-11-12T23:34:51Z"
   },
   "scope_boundaries": [
     "AZ1 language rules, six-state transformations, structured dictionary, original standalone atlas, immersive observatory, Code128-B outputs, local tests and visual identity"
@@ -37,7 +37,7 @@
 - **Protected utility:** Original 1.1 `AZURAVEL_ATLAS.html` remains byte-identical; original 80 tests and added 31 lab tests preserved.
 - **Source identity:** Current `index.html` is deterministically rebuilt from its visible source files. Prior Rev 4 deployed baseline SHA-256 was `084d7f6398eb69ecd1529630ba3e05ca4d634186ecc0da8fcedf148d5760f34c`. No actual remote fictional signal is claimed.
 - **Last local checks:** 2026-11-12, 150 tests passed across five isolated suites, 102 prior geometry checks plus 15 new coda checks, deterministic rebuild, and 12 new screenshots. A monolithic run stalled in the sandbox; its result is not represented as PASS. Earlier 131/42 figures are preserved as prior-revision evidence, not the current test ceiling.
-- **Repository delivery:** Previous remote head `a6b0ebc63463acbefd879622e88c05507085e946` and its Pages deployment are the historical published baseline. The new coda exists only in a local handoff artifact; no commit/push/Pages update was authorized in this new work unit.
+- **Repository delivery:** The Unclosed Ledger source is committed and pushed on `westkitty/AZURAVEL` `main` at `9cd3ae6960d60f5831f6b62eea95dae68470e6fd`. GitHub Actions Pages run `43329625583` finished `success` on that exact SHA, including artifact upload and deploy. This documentary closeout is a separate later commit; independently fetching the public site and real-device testing remain unverified.
 - **Quality state:** `partially-verified`; local browser behavior tested, external device/HTTP and audience response not verified.
 
 ## 3. Artifact Contract
@@ -76,6 +76,7 @@
 - **VER-009:** Chrome coverage below 40% for 102 measured scene/viewport observations; no horizontal overflow, `evidence/coverage_starsilk.log`.
 - **VER-010:** Source narrative SHA-256 and all four excerpts checked against uploaded `Codec's Radicalization Journey.txt` during authorship; file is not publicized verbatim.
 - **VER-011 (local):** Three-stage Unclosed Ledger, deep linking, keyboard navigation and source boundary PASS nine isolated browser tests; browser corruption repaired with before/after repro, 12 responsive states pass under 40%. See `OMNI_QQQ_AWE_REPORT.md`.
+- **VER-012 (remote):** The Unclosed Ledger source commit `9cd3ae6960d60f5831f6b62eea95dae68470e6fd` is the verified `main` revision; GitHub Pages Actions run `43329625583` completed successfully for that same SHA. Staged SHA-1 verified across 40 changed paths, with 12 rendered QA screenshots included.
 
 ## 6. Known Not Working
 
@@ -96,7 +97,7 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 
 ## 9. Pending Work
 
-- **PND-001 (verified for 949a2b0):** GitHub `main` and the Pages workflow `success` match source commit `949a2b0458f49199a7ba52ed604a5bc8268ff79b`; Actions run `43295585705` concluded successfully. Repeat the check after each later push.
+- **PND-001 (verified for Unclosed Ledger source):** GitHub `main` and Pages deployment matched `9cd3ae6960d60f5831f6b62eea95dae68470e6fd` in successful Actions run `43329625583`. Recheck for each later documentation or code push.
 - **PND-002:** Optional real-device session covering mobile touch, file-origin persistence, Safari/Firefox, reduced-motion and screen-reader behavior.
 - **PND-003:** Optional user study: does revealing counteraction after apparent absence actually change interpretation? This is an emotional hypothesis, not a measured result.
 
@@ -120,16 +121,16 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 | VER-004 | <40% UI coverage in measured states | verified with geometric metric | `evidence/coverage_probe.log` | Any layout/responsive change |
 | VER-005 | Chromium rendered screenshots / no JS errors | verified for screenshots | `evidence/threshold_1440.png`, `preview.log` | Any frontend change |
 | UNV-001..004 | Device/live-fetch/emotional response | unverified | not available in local runtime | Available physical target or audience |
-| PND-001 | Starsilk source-bridge Pages delivery | verified for source commit 949a2b0 | GitHub `main` readback and completed Actions run `43295585705` | Any push to main |
+| PND-001 | Unclosed Ledger Pages delivery | verified for source commit `9cd3ae6960` | GitHub `main` readback and successful Actions run `43329625583` | Any push to main |
 | VER-008 | 140 tests including 9 source-bridge checks | verified locally | `evidence/full_suite.log`, `test_starsilk_bridge.py` | Source/template/JS change |
 | VER-009 | 102 viewport/scene observations below 40% | verified locally | `evidence/coverage_starsilk.log` | CSS/readers/navigation change |
 | INV-010..011 | Starsilk separated from AZ1 and Museum authority | tested source boundary | `STARSILK_SOURCE_BOUNDARY.md`, test metadata checks | Any source edit |
 
 ## 12. Current Change Scope and Impact Radius
 
-- **Allowed change:** Local Unclosed Ledger coda, its deterministic build sources, saved-progress repair, browser tests, documentation and handoff package. Remote stage/commit/push remains outside this task’s explicit authority.
+- **Allowed change:** Unclosed Ledger source published after explicit user authorization to stage, commit, push, and update Pages. Subsequent documentation closure is scoped to recorded evidence and release-state truth; no new application features or protocol changes.
 - **Preserved:** The source dictionary, spec, Python interpreter, original standalone lab, barcode behavior and pre-existing tests; GitHub Pages workflow and user-supplied video stay unchanged.
-- **Mandatory validation:** Current five isolated suites (150 tests), 102 previous + 15 new geometry observations, protected protocol hashes, first-read/synthesized/cup journeys, and browser screenshots. GitHub source/Actions remain historical until any future publication.
+- **Mandatory validation:** Five isolated suites (150 tests), 102 previous + 15 new geometry observations, protected protocol hashes, first-read/synthesized/cup journeys, and browser screenshots. GitHub Pages verified for source release SHA; recheck any subsequent docs-only delivery SHA.
 - **QA limits:** native user-browser, physical scanners, real screen readers and emotion studies unverified.
 - **Rollback:** GitHub source history retains prior landing revision; move site to earlier known working commit only after user-authorized separate rollback action. Do not force push.
 
@@ -194,3 +195,9 @@ No confirmed unresolved defects in the tested local paths after the narrow-scree
 - **Local proof:** original 80 + 31 + 20 + 9 tests and new 10 = **150 isolated-suite PASS**. Full single-process run stalled in this sandbox; it is not reported as PASS. Original 102 and 15 new viewport/scene observations kept UI below 40% with zero horizontal overflow. Deterministic build and original protected hashes PASS.
 - **Remote delivery:** Upstream `main` observed at `a6b0ebc63463acbefd879622e88c05507085e946`, matching the source ZIP’s original `index.html` Git blob. No remote mutation or Pages update for this coda.
 - Remaining unknowns: physical touch and reader behavior, mobile Safari/Firefox, full local `file://` storage, long-session power use, real-world emotional effect.
+
+### Revision 8 — 2026-11-12
+
+- **User-authorized delivery:** Locally staged 40 bounded files; GitHub accepted their matching blob SHA-1 objects. Created a non-forced, expected-head-guarded `main` commit `9cd3ae6960d60f5831f6b62eea95dae68470e6fd` from baseline `a6b0ebc63463acbefd879622e88c05507085e946`. The locally isolated 150 tests passed again before publication. Original AZ1 sources, complete laboratory, word scanner and original ribbon assets were not modified.
+- **Pages proof:** GitHub Actions run `43329625583` finished `success` for precisely `9cd3ae6960d60f5831f6b62eea95dae68470e6fd`; checkout, static entry verification, artifact upload and Deploy site all passed. Public site route: `https://westkitty.github.io/AZURAVEL/`. Independent public HTTP/browser retrieval was blocked and remains unverified.
+- **Remaining:** This documentation closeout changes no app behavior. After its separate commit, verify the new HEAD and its own successful Pages run. Real mobile browsers, hardware scanning, long-session performance, screen readers and audience response remain unverified.

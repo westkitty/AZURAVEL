@@ -48,3 +48,7 @@ Accepted: `development/observatory.js`, `development/observatory.css`, regenerat
 Remote upstream observed at `a6b0ebc63463acbefd879622e88c05507085e946`; local ZIP's original `index.html` Git blob matched remote `f494e6c3f579808767ebbc6290f33de3ca2cd7d3` before changes. No push, deployment or GitHub CI success is claimed for the new coda.
 
 **Current verdict:** **MATERIAL LOCAL UPLIFT VERIFIED, GIT PUBLICATION PENDING AUTHORIZATION.** The legacy crash is fixed with a before/after reproduction. The new signature scene is implemented and tested; its impact on people remains unmeasured.
+
+## Publication closure — 2026-11-12
+
+The earlier **local-only** verdict above describes the preceding creation pass and is superseded **only for Git delivery**. After an explicit user instruction, the same tested source was staged, Git-blob-verified, committed to `westkitty/AZURAVEL/main` as `9cd3ae6960d60f5831f6b62eea95dae68470e6fd`, and successfully deployed by GitHub Pages Actions run `43329625583`. The 150 tested behaviors and 40% screen limit were unchanged. External HTTP smoke and physical-device UX were not established.

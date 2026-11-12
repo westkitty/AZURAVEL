@@ -1,13 +1,13 @@
 {
   "identity": "westkitty/AZURAVEL",
   "branch": "main",
-  "release": "unclosed-ledger-local-review-1",
+  "release": "unclosed-ledger-pages-1",
   "protocol": "AZ1",
   "visual_reference_count": 10,
   "site_reference_video": "grok_video_2026-04-10-04-08-17(1).mp4",
   "site_entry": "index.html",
   "protected_source_hashes": "PROTECTED_HASHES.json",
-  "evidence_scope": "150 isolated-suite tests PASS, 102 prior + 15 new geometric observations; unclosed ledger local artifact, no new GitHub commit or Pages deploy",
+  "evidence_scope": "150 isolated-suite tests PASS; 102 prior + 15 new geometric observations; source SHA 9cd3ae6960d60f5831f6b62eea95dae68470e6fd on main, Pages Actions run 43329625583 success; public HTTP smoke unverified",
   "files": [
     {
       "path": ".github/workflows/pages.yml",
@@ -36,8 +36,8 @@
     },
     {
       "path": "AZURAVEL_bible.md",
-      "size": 3447,
-      "sha256": "7c388eed3c0bc3a70959ceeb947fc65dcd9fd706e391bc2ab60f6b440dd330d3"
+      "size": 4581,
+      "sha256": "f821545313bb6ab99323bbcd0cbae240723bfde52f0baba32a8f54b1a5bc4720"
     },
     {
       "path": "OBSERVATORY_DESIGN.md",
@@ -51,13 +51,13 @@
     },
     {
       "path": "OMNI_QQQ_AWE_REPORT.md",
-      "size": 5128,
-      "sha256": "acca6464b89f26e9a06571b4d7db1db99780bc925bf3e710873e673ccb6f9204"
+      "size": 5664,
+      "sha256": "e7c2e5e6426d1bb51d7dc64474b2fdc2e22205fcf45c11528632b883800c2306"
     },
     {
       "path": "OPERATIONAL_STATE.md",
-      "size": 20678,
-      "sha256": "634a8bec0054c5d83db00fa911c9631679bc53a8d6e611a7fd17c2f4553b16fe"
+      "size": 22253,
+      "sha256": "8e516f3096e19e597bab6042cd21739ad8c50ea0922aff82dcc5f3ba3cf76029"
     },
     {
       "path": "PROTECTED_HASHES.json",
@@ -71,8 +71,8 @@
     },
     {
       "path": "README.md",
-      "size": 6726,
-      "sha256": "07fe797b37d1c380da02a171913ee9c78feb4d5c3dad44567f071c101cc3ec37"
+      "size": 7025,
+      "sha256": "bbe407f4a60c813f2dc68a7273fca91346775beff4fe7aa5f0d76615e11025a3"
     },
     {
       "path": "SOURCE_PROMPT.md",

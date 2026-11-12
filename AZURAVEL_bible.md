@@ -25,3 +25,13 @@
 **Fragile areas:** `development/observatory.js` and `development/observatory.css` are embedded deterministically in `index.html`; never hand-edit only the compiled artifact. The four testimony summaries are in `sources/starsilk_testimony.json`; do not replace them with inferred historical facts. Any new route must be checked against reader scroll behavior, deep-link integrity, reduced motion, and 40% layout coverage.
 
 **Next release action (approval gated):** Apply the changed source files on the verified `westkitty/AZURAVEL` `main` branch, run the five suites, then commit and push only after explicit authority; verify the exact GitHub Actions Pages SHA. Do not force-push.
+
+## Entry 2026-11-12 — Publication of the Unclosed Ledger
+
+**Source release:** `9cd3ae6960d60f5831f6b62eea95dae68470e6fd` on `westkitty/AZURAVEL/main`, advanced non-forced from `a6b0ebc63463acbefd879622e88c05507085e946`. Staged Git objects and remote blobs matched for 40 authorized changed files.
+
+**Remote proof:** GitHub Pages Actions run `43329625583` completed `success` for the source release SHA; `index.html` remote blob `c9c1023a1cd36f0db20e8472098c53471d087ce8` matched staged source. This entry is not independent external HTTP or audience proof.
+
+**Preservation:** AZ1 specifications, dictionary, parser, barcode and original laboratory/azure ribbon bytes remain untouched. Browser evidence and full QA captures were staged with the source. The 150 isolated test passes are valid for this source revision; subsequent docs-only changes require CI/Pages readback but not browser-code retesting.
+
+**Forward guard:** Do not turn the four Starsilk records into a literal AZURAVEL translation or causal single event. Preserve the 40% interface ceiling and user controls. Record follow-up commit SHA without rewriting history.
